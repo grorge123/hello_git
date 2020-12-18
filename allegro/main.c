@@ -1,5 +1,5 @@
-#include <allegro5/allegro.h>
-#include <allegro5/allegro_font.h>
+#include <allegro.h>
+#include <allegro_font.h>
 int main(int argc, char **argv) {
     al_init();
     al_init_font_addon();
