@@ -1,0 +1,2 @@
+shared.h和game.h都重複定義shared_init和shared_destroy
+

@@ -1,0 +1,91 @@
+There are total 8 supported mouse buttons
+Allegro5 initialized
+Game begin
+resized image: main-bg.jpg
+resized image: start-bg.jpg
+Change scene from 0 to 1
+Game initialized
+Game start event loop
+138 frame(s) dropped
+Key with keycode 82 down
+Key with keycode 85 down
+Key with keycode 83 down
+Key with keycode 82 up
+Key with keycode 85 up
+Key with keycode 84 down
+Key with keycode 83 up
+Key with keycode 82 down
+Key with keycode 84 up
+Key with keycode 85 down
+Key with keycode 82 up
+Key with keycode 83 down
+Key with keycode 85 up
+Key with keycode 82 down
+Key with keycode 84 down
+Key with keycode 83 up
+Key with keycode 82 up
+Key with keycode 83 down
+Key with keycode 85 down
+Key with keycode 83 up
+Key with keycode 83 down
+Key with keycode 85 up
+Key with keycode 83 up
+Key with keycode 84 up
+Key with keycode 82 down
+Key with keycode 85 down
+Key with keycode 83 down
+Key with keycode 82 up
+Key with keycode 85 up
+Key with keycode 82 down
+Key with keycode 83 up
+Key with keycode 84 down
+Key with keycode 85 down
+Key with keycode 82 up
+Key with keycode 84 up
+Key with keycode 83 down
+Key with keycode 85 up
+Key with keycode 84 down
+Key with keycode 85 down
+Key with keycode 82 down
+Key with keycode 83 up
+Key with keycode 85 up
+Key with keycode 84 up
+Key with keycode 83 down
+Key with keycode 85 down
+Key with keycode 84 down
+Key with keycode 82 up
+Key with keycode 83 up
+Key with keycode 82 down
+Key with keycode 85 up
+Key with keycode 84 up
+Key with keycode 82 up
+Key with keycode 84 down
+Key with keycode 83 down
+Key with keycode 85 down
+Key with keycode 84 up
+Key with keycode 83 up
+Key with keycode 85 up
+Key with keycode 85 down
+Key with keycode 83 down
+Key with keycode 59 down
+Key with keycode 85 up
+Key with keycode 83 up
+Key with keycode 59 up
+Key with keycode 59 down
+Key with keycode 59 up
+Key with keycode 59 down
+Key with keycode 59 up
+Key with keycode 82 down
+Key with keycode 85 down
+Key with keycode 83 down
+Key with keycode 85 up
+Key with keycode 82 up
+Key with keycode 83 up
+Key with keycode 83 down
+Key with keycode 85 down
+Key with keycode 84 down
+Key with keycode 85 up
+Key with keycode 84 up
+Key with keycode 83 up
+Window close button clicked
+Game end

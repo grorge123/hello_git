@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="allegro_demo"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="allegro_demo">
+				<Option output="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/cmake-build-debug/allegro_demo.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/."/>
+					<Add directory="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include"/>
+					<Add directory="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5"/>
+					<Add directory="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/inline"/>
+					<Add directory="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/internal"/>
+					<Add directory="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/opengl"/>
+					<Add directory="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/opengl/GLext"/>
+					<Add directory="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/platform"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/cmake-build-debug/Makefile&quot;  VERBOSE=1 allegro_demo"/>
+					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="allegro_demo/fast">
+				<Option output="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/cmake-build-debug/allegro_demo.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/."/>
+					<Add directory="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include"/>
+					<Add directory="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5"/>
+					<Add directory="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/inline"/>
+					<Add directory="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/internal"/>
+					<Add directory="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/opengl"/>
+					<Add directory="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/opengl/GLext"/>
+					<Add directory="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/platform"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/cmake-build-debug/Makefile&quot;  VERBOSE=1 allegro_demo/fast"/>
+					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/game.c">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/game.h">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/alcompat.h">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/allegro.h">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/allegro5.h">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/allegro_acodec.h">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/allegro_audio.h">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/allegro_color.h">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/allegro_direct3d.h">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/allegro_font.h">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/allegro_image.h">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/allegro_memfile.h">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/allegro_native_dialog.h">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/allegro_opengl.h">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/allegro_physfs.h">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/allegro_primitives.h">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/allegro_ttf.h">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/allegro_video.h">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/allegro_windows.h">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/altime.h">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/base.h">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/bitmap.h">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/bitmap_draw.h">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/bitmap_io.h">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/bitmap_lock.h">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/blender.h">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/clipboard.h">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/color.h">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/config.h">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/cpu.h">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/debug.h">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/display.h">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/drawing.h">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/error.h">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/events.h">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/file.h">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/fixed.h">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/fmaths.h">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/fshook.h">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/fullscreen_mode.h">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/haptic.h">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/inline/fmaths.inl">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/internal/alconfig.h">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/joystick.h">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/keyboard.h">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/keycodes.h">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/memory.h">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/monitor.h">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/mouse.h">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/mouse_cursor.h">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/opengl/GLext/gl_ext_alias.h">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/opengl/GLext/gl_ext_api.h">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/opengl/GLext/gl_ext_defs.h">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/opengl/GLext/gl_ext_list.h">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/opengl/GLext/glx_ext_alias.h">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/opengl/GLext/glx_ext_api.h">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/opengl/GLext/glx_ext_defs.h">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/opengl/GLext/glx_ext_list.h">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/opengl/GLext/wgl_ext_alias.h">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/opengl/GLext/wgl_ext_api.h">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/opengl/GLext/wgl_ext_defs.h">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/opengl/GLext/wgl_ext_list.h">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/opengl/gl_ext.h">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/path.h">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/platform/alandroid.h">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/platform/alandroidcfg.h">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/platform/albcc32.h">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/platform/aliphone.h">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/platform/aliphonecfg.h">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/platform/allegro_sdl_config.h">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/platform/almngw32.h">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/platform/almsvc.h">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/platform/alosx.h">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/platform/alosxcfg.h">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/platform/alplatf.h">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/platform/alraspberrypi.h">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/platform/alraspberrypicfg.h">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/platform/alucfg.h">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/platform/alunix.h">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/platform/alwatcom.h">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/platform/alwin.h">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/platform/astdbool.h">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/platform/astdint.h">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/render_state.h">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/shader.h">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/system.h">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/threads.h">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/timer.h">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/tls.h">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/touch_input.h">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/transformations.h">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/include/allegro5/utf8.h">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/main.c">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/scene_menu.c">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/scene_menu.h">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/scene_settings.c">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/scene_settings.h">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/scene_start.c">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/scene_start.h">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/utility.c">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/utility.h">
+			<Option target="allegro_demo"/>
+		</Unit>
+		<Unit filename="C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

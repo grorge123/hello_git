@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Shooting Sgame" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/Shooting Sgame" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+				<Linker>
+					<Add library="bin/Debug/allegro_monolith-debug-5.2.dll" />
+				</Linker>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/Shooting Sgame" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add library="C:/allegro-mingw-gcc6.2.0-x64-static-5.2.2/allegro/lib/liballegro_monolith.dll.a" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add directory="C:/allegro-mingw-gcc6.2.0-x64-static-5.2.2/allegro/include/" />
+		</Compiler>
+		<Linker>
+			<Add directory="C:/allegro-mingw-gcc6.2.0-x64-static-5.2.2/allegro/lib/" />
+		</Linker>
+		<Unit filename="enemy_spawn.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="enemy_spawn.h" />
+		<Unit filename="game.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="game.h" />
+		<Unit filename="main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="scene_menu.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="scene_menu.h" />
+		<Unit filename="scene_settings.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="scene_settings.h" />
+		<Unit filename="scene_start.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="scene_start.h" />
+		<Unit filename="shared.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="shared.h" />
+		<Unit filename="utility.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="utility.h" />
+		<Extensions>
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
