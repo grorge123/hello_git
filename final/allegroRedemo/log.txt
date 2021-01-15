@@ -1,4 +1,4 @@
-There are total 5 supported mouse buttons
+There are total 16 supported mouse buttons
 Allegro5 initialized
 Game begin
 loaded font: .\img\pirulen.ttf with size 32
@@ -6,9 +6,9 @@ loaded font: .\img\pirulen.ttf with size 24
 Change scene from (unnamed) to (unnamed)
 Menu scene start create
 Settings scene created
-loaded font: .\img\pirulen.ttf with size 32
 Game over scene start creat
 Gamewin scene start creat
+loaded font: .\img\pirulen.ttf with size 32
 loaded font: .\img\pirulen.ttf with size 24
 Change scene from (unnamed) to (unnamed)
 loaded image: .\img\gamewin-bg.jpg
@@ -16,20 +16,20 @@ loaded image: .\img\gameover-bg.jpg
 loaded image: .\img\start-bg.jpg
 loaded image: .\img\main-bg.jpg
 resized image: .\img\gameover-bg.jpg
+resized image: .\img\gamewin-bg.jpg
+gamewin scene initialized
+Gamewin scene created
+resized image: .\img\main-bg.jpg
+gameover scene initialized
 resized image: .\img\start-bg.jpg
 loaded image: .\img\plane.png
 loaded image: .\img\plane.png
 loaded image: .\img\rocket-4.png
 loaded image: .\img\image12.png
 loaded image: .\img\rocket-1.png
-Start scene initialized
-resized image: .\img\gamewin-bg.jpg
-Start scene created
-gamewin scene initialized
-Gamewin scene created
-gameover scene initialized
 Game over scene created
-resized image: .\img\main-bg.jpg
+Start scene initialized
+Start scene created
 loaded audio: .\img\S31-Night Prowler.ogg
 played audio (bgm)
 Menu scene initialized
@@ -37,6 +37,8 @@ Menu scene created
 Change scene from (unnamed) to Menu
 Game initialized
 Game start event loop
+Mouse button 1 down at (665, 235)
+Mouse button 1 up at (673, 236)
 Key with keycode 67 down
 Change scene from Menu to Start
 active scene init
@@ -44,5 +46,30 @@ loaded image: .\img\plane.png
 loaded image: .\img\plane.png
 Start scene initialized
 Key with keycode 67 up
+Key with keycode 1 down
+Key with keycode 23 down
+Key with keycode 4 down
+Key with keycode 1 up
+Key with keycode 23 up
+Key with keycode 4 up
+Key with keycode 19 down
+Key with keycode 1 down
+Key with keycode 85 down
+Key with keycode 82 down
+Key with keycode 82 up
+Key with keycode 83 down
+Key with keycode 19 up
+Key with keycode 85 up
+Key with keycode 1 up
+Key with keycode 83 up
+Key with keycode 84 down
+Key with keycode 23 down
+Key with keycode 84 up
+Key with keycode 23 up
+Key with keycode 19 down
+Key with keycode 19 up
+Key with keycode 19 down
+Key with keycode 19 up
 Window close button clicked
 Game end
+Start scene destroyed

@@ -129,7 +129,7 @@ static void init(void) {
     for(int i = 0 ; i < 2 ; i++){
         plane[i].w = al_get_bitmap_width(plane[i].img);
         plane[i].h = al_get_bitmap_height(plane[i].img);
-        plane[i].hp = plane[i].max_hp = 5;
+        plane[i].hp = plane[i].max_hp = 10000000;
         plane[i].hidden = false;
     }
     if(!img_enemy[0])
@@ -167,7 +167,7 @@ int type_1_change_v_x(MovableObject now, int data[]){
     return (int)(data[0] + cos(now.y / 10) * 15) - now.x;
 }
 void born(int type) {
-    if(type == 0){
+    if(type == 1){
         int aixl_y = 0, aixl_x = 15 + (rand() % (SCREEN_W - 30));
         for(int i = 0 ; i < MAX_enemy_1_size ; i++, aixl_y -= 100){
             LinkListMovableObject *new_enemy_p = malloc(sizeof(LinkListMovableObject));
@@ -184,7 +184,7 @@ void born(int type) {
             enemy->data[0] = aixl_x;
             enemy->cvx = &type_1_change_v_x;
             enemy->cvy = NULL;
-            enemy->type = 0;
+            enemy->type = 1;
             new_enemy_p->val = *enemy;
             new_enemy_p->last = new_enemy_p->next = NULL;
             if(enemies == NULL){
@@ -226,10 +226,9 @@ bool change_state(MovableObject *now){
 
 static void update(void) {
     double now = al_get_time();
-//    if(!((int)now % 5)){
-//        if(rand()%50==0)born(0);
-//    }
-    LinkListMovableObject* now_enemy = enemies;
+    if(!((int)now % 5)){
+        if(rand()%10==0)born(1);
+    }
     plane[0].vx = plane[0].vy = plane[1].vx = plane[1].vy = 0;
     if (key_state[ALLEGRO_KEY_UP])
         plane[0].vy -= 1;
@@ -259,13 +258,13 @@ static void update(void) {
         else if (plane[i].y + plane[i].h / 2 > SCREEN_H)
             plane[i].y = SCREEN_H - plane[i].w / 2;
     }
-    return;
+    LinkListMovableObject* now_enemy = enemies;
     while(now_enemy != NULL){
         if(change_state(&(now_enemy->val))){
             if(now_enemy == tail){
                 tail = now_enemy->last;
             }
-            if(now_enemy->val.type == 0)score += 10;
+            if(now_enemy->val.type == 1)score += 10;
             if(now_enemy->last != NULL && now_enemy->next != NULL){
                 now_enemy->next->last = now_enemy->last;
                 now_enemy->last->next = now_enemy->next;
@@ -324,7 +323,7 @@ static void update(void) {
     if(plane[0].hidden && plane[1].hidden){
         start_scene.init = false;
         game_change_scene(&gameover_scene);
-    }else if(score >= 100){
+    }else if(score >= 10000000){
         start_scene.init = false;
         game_change_scene(&gamewin_scene);
     }
@@ -333,7 +332,10 @@ static void update(void) {
 static void draw_movable_object(MovableObject obj) {
     if (obj.hidden)
         return;
-    al_draw_bitmap(obj.img, round(obj.x - obj.w / 2), round(obj.y - obj.h / 2), 0);
+    if(obj.type == 1)
+        al_draw_filled_rectangle(obj.x,obj.y,obj.x+obj.w,obj.y+obj.h,al_map_rgb(255,255,0));
+    else
+        al_draw_bitmap(obj.img, round(obj.x - obj.w / 2), round(obj.y - obj.h / 2), 0);
     if (draw_gizmos) {
         // al_draw_rectangle(round(obj.x - obj.w / 2), round(obj.y - obj.h / 2),
         //     round(obj.x + obj.w / 2) + 1, round(obj.y + obj.h / 2) + 1, al_map_rgb(255, 0, 0), 0);
@@ -341,19 +343,21 @@ static void draw_movable_object(MovableObject obj) {
     }
 }
 static void draw(void) {
-    al_draw_bitmap(img_background, 0, 0, 0);
+//    double now = al_get_time();
+//    al_draw_bitmap(img_background, 0, 0, 0);
+    al_draw_filled_rectangle(0,0,SCREEN_W,SCREEN_H,al_map_rgb(255,255,255));
+//    printf("%llf\n", al_get_time() - now);
     char score_char[10] = {"Score:"};
-//    to_string(score_char, score);
+    to_string(score_char, score);
     for(int i = 0 ; i < 2 ; i++){
         if(plane[i].hp <= 0 || plane[i].hidden)continue;
-//        char output[50] = {};
-//        to_string(output, plane[i].hp);
-//        output[strlen(output)] = '/';
-//        to_string(output, plane[i].max_hp);
-//        al_draw_text(font_pirulen_32, al_map_rgb(0, 0, 0), plane[i].x, plane[i].y - 65, ALLEGRO_ALIGN_CENTER, output);
+        char output[50] = {};
+        to_string(output, plane[i].hp);
+        output[strlen(output)] = '/';
+        to_string(output, plane[i].max_hp);
+        al_draw_text(font_pirulen_32, al_map_rgb(0, 0, 0), plane[i].x, plane[i].y - 65, ALLEGRO_ALIGN_CENTER, output);
         draw_movable_object(plane[i]);
     }
-    return;
     al_draw_text(font_pirulen_32, al_map_rgb(0, 0, 0), 130, 10, ALLEGRO_ALIGN_CENTER, score_char);
     for(int q = 0 ; q < 2 ; q++)
         for (int i = 0 ; i < MAX_BULLET ; i++)
