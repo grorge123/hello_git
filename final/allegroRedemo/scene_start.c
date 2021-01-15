@@ -1,13 +1,16 @@
+#include "game.h"
 #include "scene_start.h"
+#include "utility.h"
+#include "shared.h"
+#include "scene_menu.h"
+#include <math.h>
 #include <allegro5/allegro.h>
 #include <allegro5/allegro_image.h>
 #include <allegro5/allegro_primitives.h>
-#include "game.h"
-#include "utility.h"
-#include <math.h>
-#include "scene_menu.h"
 
-#include "queue.h"
+#define min(a,b) (((a)<(b))?(a):(b))
+#define max(a,b) (((a)>(b))?(a):(b))
+
 
 // Variables and functions with 'static' prefix at the top level of a
 // source file is only accessible in that file ("file scope", also
@@ -16,19 +19,21 @@
 
 /* Define your static vars / function prototypes below. */
 
-// TODO: More variables and functions that will only be accessed
-// inside this scene. They should all have the 'static' prefix.
-bool player_double = false;
 static ALLEGRO_BITMAP* img_background;
-static ALLEGRO_BITMAP* img_plane;
-static ALLEGRO_BITMAP* img_enemy;
-// [HACKATHON 2-1]
-// TODO: Declare a variable to store your bullet's image.
-// Uncomment and fill in the code below.
+static ALLEGRO_BITMAP* img_plane[2];
+static ALLEGRO_BITMAP* img_enemy[2];
+
+bool player_double = false;
+char plane_img[2][50] = {".\\img\\plane.png", ".\\img\\plane.png"};
+
 static ALLEGRO_BITMAP* img_bullet;
 static ALLEGRO_BITMAP* img_bullet_enemies;
 
-typedef struct {
+typedef struct MovableObject MovableObject;
+typedef struct LinkListMovableObject LinkListMovableObject;
+typedef int(*change_v)(MovableObject now, int data[]);
+
+struct MovableObject{
     // The center coordinate of the image.
     float x, y;
     // The width and height of the object.
@@ -40,8 +45,18 @@ typedef struct {
     // The pointer to the object’s image.
     ALLEGRO_BITMAP* img;
     int hp;
-    int born_aixl;
-} MovableObject;
+    int max_hp;
+    int type;
+    int data[10];
+    change_v cvx;
+    change_v cvy;
+};
+
+
+struct LinkListMovableObject{
+    LinkListMovableObject *last, *next;
+    MovableObject val;
+};
 
 static void init(void);
 static void update(void);
@@ -49,213 +64,270 @@ static void draw_movable_object(MovableObject obj);
 static void draw(void);
 static void destroy(void);
 
-#define MAX_ENEMY 5
-#define MAX_ENEMY_SHOW 8
-// [HACKATHON 2-2]
-// TODO: Declare the max bullet count that will show on screen.
-// You can try max 4 bullets here and see if you needed more.
-// Uncomment and fill in the code below.
-#define MAX_BULLET 50
-static MovableObject plane;
-static MovableObject enemies[MAX_ENEMY_SHOW][MAX_ENEMY];
-bool enemies_show[MAX_ENEMY_SHOW];
-// [HACKATHON 2-3]
-// TODO: Declare an array to store bullets with size of max bullet count.
-// Uncomment and fill in the code below.
-static MovableObject bullets[MAX_BULLET];
-static MovableObject bullets_enemies[MAX_ENEMY_SHOW][MAX_ENEMY];
-char plane_img[2][50];
-// [HACKATHON 2-4]
-// TODO: Set up bullet shooting cool-down variables.
-// 1) Declare your shooting cool-down time as constant. (0.2f will be nice)
-// 2) Declare your last shoot timestamp.
-// Uncomment and fill in the code below.
+#define MAX_enemy_1_size 8
+#define MAX_BULLET 4
+
+static MovableObject plane[2];
+static MovableObject bullets[2][MAX_BULLET];
+
 static const float MAX_COOLDOWN = 0.2f;
-static double last_shoot_timestamp;
+static double last_shoot_timestamp[2];
+
 static ALLEGRO_SAMPLE* bgm;
 static ALLEGRO_SAMPLE_ID bgm_id;
 static bool draw_gizmos;
+static int score;
+
+LinkListMovableObject *enemies;
+
+void to_string(char *s, int num){
+    char tmp[64] = {};
+    int now = 0, start = strlen(s);
+    while (num > 0){
+        tmp[now] = (num%10) + '0';
+        num /= 10;
+        now++;
+    }
+    if(now == 0){
+        tmp[now] = '0';
+        now++;
+    }
+    for(int i = 1; i <= now ; i++){
+        s[start + i - 1] = tmp[now - i];
+    }
+    return;
+}
+
+void clear_link_list(LinkListMovableObject *now){
+    if(now == NULL)return;
+    clear_link_list(now->next);
+    free(now);
+    return;
+}
+static LinkListMovableObject *tail = NULL;
+LinkListMovableObject* find_tail(LinkListMovableObject *now){
+    if(tail == NULL){
+        tail = now;
+    }
+    while(tail->next != NULL){
+        tail = tail->next;
+    }
+    return tail;
+}
 
 static void init(void) {
-    int i;
-    img_background = load_bitmap_resized(".\\img\\start-bg.jpg", SCREEN_W, SCREEN_H);
-    img_plane = plane.img = load_bitmap(".\\img\\plane.png");
-    plane.x = 400;
-    plane.y = 500;
-    plane.w = al_get_bitmap_width(plane.img);
-    plane.h = al_get_bitmap_height(plane.img);
-    img_enemy = load_bitmap(".\\img\\rocket-4.png");
-    enemies_show[0] = true;
-    for (int q = 0; q < MAX_ENEMY_SHOW; q++) {
-        for (i = 0; i < MAX_ENEMY; i++) {
-            enemies[q][i].img = img_enemy;
-            enemies[q][i].w = al_get_bitmap_width(img_enemy);
-            enemies[q][i].h = al_get_bitmap_height(img_enemy);
-            if (i == 0) {
-                enemies[q][i].y = 0;
-                enemies[q][i].x = rand() % SCREEN_W;
-                enemies[q][0].born_aixl = enemies[0][i].x;
-            }
-            else {
-                enemies[q][i].y = enemies[0][i - 1].y - 100;
-                enemies[q][i].x = enemies[0][i - 1].x;
-            }
-            enemies[q][i].hp = 2;
-            enemies[q][i].hidden = false;
+    score = 0;
+    if(!img_background)
+        img_background = load_bitmap_resized(".\\img\\start-bg.jpg", SCREEN_W, SCREEN_H);
+    clear_link_list(enemies);
+    img_plane[0] = plane[0].img = load_bitmap(plane_img[0]);
+    img_plane[1] = plane[1].img = load_bitmap(plane_img[1]);
+    plane[0].x = 200;
+    plane[0].y = 500;
+    plane[1].x = 600;
+    plane[1].y = 500;
+    for(int i = 0 ; i < 2 ; i++){
+        plane[i].w = al_get_bitmap_width(plane[i].img);
+        plane[i].h = al_get_bitmap_height(plane[i].img);
+        plane[i].hp = plane[i].max_hp = 5;
+        plane[i].hidden = false;
+    }
+    if(!img_enemy[0])
+        img_enemy[0] = load_bitmap(".\\img\\rocket-4.png");
+    if(!img_bullet)
+        img_bullet = load_bitmap(".\\img\\image12.png");
+    if(!img_bullet_enemies)
+        img_bullet_enemies = load_bitmap(".\\img\\rocket-1.png");
+    for(int q = 0 ; q < 2 ; q++){
+        for (int i = 0; i < MAX_BULLET; i++) {
+            bullets[q][i].img = img_bullet;
+            bullets[q][i].w = al_get_bitmap_width(img_bullet);
+            bullets[q][i].h = al_get_bitmap_height(img_bullet);
+            bullets[q][i].vx = 0;
+            bullets[q][i].vy = -3;
+            bullets[q][i].hidden = true;
         }
     }
-    // [HACKATHON 2-5]
-    // TODO: Initialize bullets.
-    // 1) Search for a bullet image online and put it in your project.
-    //    You can use the image we provided.
-    // 2) Load it in by 'load_bitmap' or 'load_bitmap_resized'.
-    // 3) For each bullets in array, set their w and h to the size of
-    //    the image, and set their img to bullet image, hidden to true,
-    //    (vx, vy) to (0, -3).
-    // Uncomment and fill in the code below.
-    img_bullet = al_load_bitmap(".\\img\\image12.png");
-    img_bullet_enemies = al_load_bitmap(".\\img\\rocket-1.png");
-    for (int i = 0; i < MAX_BULLET; i++) {
-        bullets[i].img = img_bullet;
-        bullets[i].w = al_get_bitmap_width(img_bullet);
-        bullets[i].h = al_get_bitmap_height(img_bullet);
-        bullets[i].vx = 0;
-        bullets[i].vy = -3;
-        bullets[i].hidden = true;
-    }
-    /*for (int i = 0; i < MAx_enemy; i++) {
-        bullets_enemies[i].img = img_bullet_enemies;
-        bullets_enemies[i].w = al_get_bitmap_width(img_bullet);
-        bullets_enemies[i].h = al_get_bitmap_height(img_bullet);
-        bullets_enemies[i].vx = 1;
-        bullets_enemies[i].vy = 3;
-        bullets_enemies[i].hidden = true;
-    }*/
+    enemies = NULL;
+    if(!player_double)plane[1].hidden = true;
     // Can be moved to shared_init to decrease loading time.
-    bgm = load_audio(".\\img\\mythica.ogg");
+//    if(!bgm)
+//        bgm = load_audio(".\\img\\mythica.ogg");
     game_log("Start scene initialized");
-    bgm_id = play_bgm(bgm, 1);
+//    bgm_id = play_bgm(bgm, 1);
 }
 bool collision(MovableObject a, MovableObject b) {
-    int flag1 = 0, flag2 = 0;
-    if (a.x - a.w / 2 >= b.x - b.w / 2 && a.x - a.w / 2 <= b.x + b.w / 2)flag1 = 1;
-    if (a.x + a.w / 2 >= b.x - b.w / 2 && a.x + a.w / 2 <= b.x + b.w / 2)flag1 = 1;
-    if (a.y - a.h / 2 >= b.y - b.h / 2 && a.y - a.h / 2 <= b.y + b.h / 2)flag2 = 1;
-    if (a.y + a.h / 2 >= b.y - b.h / 2 && a.y + a.h / 2 <= b.y + b.h / 2)flag2 = 1;
-    return flag1 && flag2;
+    if(abs(a.x - b.x) * abs(a.x - b.x) + abs(a.y-b.y) * abs(a.y - b.y) <= max(max(a.w, a.h), max(b.w, b.h)) * max(max(a.w, a.h), max(b.w, b.h)))
+        return true;
+    return false;
 }
-void born(MovableObject enemies[],int num) {
-    enemies_show[num] = 1;
-    for (int i = 0; i < MAX_ENEMY; i++) {
-        if (i == 0) {
-            enemies[i].y = 0;
-            enemies[i].x = rand() % SCREEN_W;
-            enemies[0].born_aixl = enemies[i].x;
-        }
-        else {
-            enemies[i].y = enemies[i - 1].y - 100;
-            enemies[i].x = enemies[i - 1].x;
-        }
-        enemies[i].hidden = false;
-        enemies[i].hp = 2;
-    }
+
+
+int type_1_change_v_x(MovableObject now, int data[]){
+    return (int)(data[0] + cos(now.y / 10) * 15) - now.x;
 }
-bool check_enemis(MovableObject enemies[], int num) {
-    for (int i = 0; i < MAX_ENEMY; i++) {
-        enemies[i].y += 1;
-        enemies[i].x = enemies[0].born_aixl + cos(enemies[i].y / 10) * 15;
-        if (enemies[MAX_ENEMY - 1].y > SCREEN_H) {
-            enemies_show[num] = 0;
-        }
-    }
-    for (int i = 0; i < MAX_BULLET; i++) {
-        for (int q = 0; q < MAX_ENEMY; q++) {
-            if (bullets[i].hidden || enemies[q].hidden)continue;
-            if (collision(bullets[i], enemies[q])) {
-                bullets[i].hidden = true;
-                enemies[q].hp--;
-                if (enemies[q].hp <= 0)enemies[q].hidden = true;
+void born(int type) {
+    if(type == 0){
+        int aixl_y = 0, aixl_x = 15 + (rand() % (SCREEN_W - 30));
+        for(int i = 0 ; i < MAX_enemy_1_size ; i++, aixl_y -= 100){
+            LinkListMovableObject *new_enemy_p = malloc(sizeof(LinkListMovableObject));
+            MovableObject *enemy = malloc(sizeof(MovableObject));
+            enemy->img = img_enemy[0];
+            enemy->hp = 2;
+            enemy->hidden = false;
+            enemy->x = aixl_x;
+            enemy->y = aixl_y;
+            enemy->w = al_get_bitmap_width(img_enemy[0]);
+            enemy->h = al_get_bitmap_height(img_enemy[0]);
+            enemy->vx = 0;
+            enemy->vy = 1;
+            enemy->data[0] = aixl_x;
+            enemy->cvx = &type_1_change_v_x;
+            enemy->cvy = NULL;
+            enemy->type = 0;
+            new_enemy_p->val = *enemy;
+            new_enemy_p->last = new_enemy_p->next = NULL;
+            if(enemies == NULL){
+                enemies = new_enemy_p;
+            }else{
+                tail = find_tail(enemies);
+                tail->next = new_enemy_p;
+                new_enemy_p->last = tail;
             }
         }
     }
-    for (int i = 0; i < MAX_ENEMY; i++) {
-        if (!enemies[i].hidden &&collision(plane, enemies[i])) {
-            game_change_scene(&gameover_scene);
-            return;
+}
+
+bool change_state(MovableObject *now){
+    if(now->cvx)
+        now->vx = now->cvx(*now, now->data);
+    if(now->cvy)
+        now->vy = now->cvy(*now, now->data);
+    now->x += now->vx;
+    now->y += now->vy;
+    for(int i = 0 ; i < 2 ; i++){
+        for(int q = 0 ; q < MAX_BULLET ; q++ ){
+            if(bullets[i][q].hidden == false && collision(*now, bullets[i][q])){
+                bullets[i][q].hidden = true;
+                now->hp--;
+                if(now->hp <= 0)return true;
+            }
         }
     }
+    for(int i = 0 ; i < 2 ; i++){
+        if(plane[i].hidden == false && collision(plane[i], *now)){
+            plane[i].hp -= now->hp;
+            now->hp = 0;
+            return true;
+        }
+    }
+    return false;
 }
+
 static void update(void) {
     double now = al_get_time();
-    plane.vx = plane.vy = 0;
-    if (key_state[ALLEGRO_KEY_UP] || key_state[ALLEGRO_KEY_W])
-        plane.vy -= 1;
-    if (key_state[ALLEGRO_KEY_DOWN] || key_state[ALLEGRO_KEY_S])
-        plane.vy += 1;
-    if (key_state[ALLEGRO_KEY_LEFT] || key_state[ALLEGRO_KEY_A])
-        plane.vx -= 1;
-    if (key_state[ALLEGRO_KEY_RIGHT] || key_state[ALLEGRO_KEY_D])
-        plane.vx += 1;
-    // 0.71 is (1/sqrt(2)).
-    plane.y += plane.vy * 4 * (plane.vx ? 0.71f : 1);
-    plane.x += plane.vx * 4 * (plane.vy ? 0.71f : 1);
-    // [HACKATHON 1-1]
-    // TODO: Limit the plane's collision box inside the frame.
-    //       (x, y axes can be separated.)
-    // Uncomment and fill in the code below.
-    if (plane.x - plane.w / 2 < 0)
-        plane.x = 0 + plane.w / 2;
-    else if (plane.x + plane.w / 2 > SCREEN_W)
-        plane.x = SCREEN_W - plane.w / 2;
-    if (plane.y - plane.h / 2 < 0)
-        plane.y = plane.h / 2;
-    else if (plane.y + plane.h / 2 > SCREEN_H)
-        plane.y = SCREEN_H - plane.w / 2;
-    // [HACKATHON 2-6]
-    // TODO: Update bullet coordinates.
-    // 1) For each bullets, if it's not hidden, update x, y
-    // according to vx, vy.
-    // 2) If the bullet is out of the screen, hide it.
-    // Uncomment and fill in the code below.
-    int i;
-    for (i = 0; i < MAX_BULLET; i++) {
-        if (bullets[i].hidden)
-            continue;
-        bullets[i].x += bullets[i].vx;
-        bullets[i].y += bullets[i].vy;
-        if (bullets[i].y <= 0)
-            bullets[i].hidden = true;
+//    if(!((int)now % 5)){
+//        if(rand()%50==0)born(0);
+//    }
+    LinkListMovableObject* now_enemy = enemies;
+    plane[0].vx = plane[0].vy = plane[1].vx = plane[1].vy = 0;
+    if (key_state[ALLEGRO_KEY_UP])
+        plane[0].vy -= 1;
+    if (key_state[ALLEGRO_KEY_DOWN])
+        plane[0].vy += 1;
+    if (key_state[ALLEGRO_KEY_LEFT])
+        plane[0].vx -= 1;
+    if (key_state[ALLEGRO_KEY_RIGHT])
+        plane[0].vx += 1;
+    if (key_state[ALLEGRO_KEY_W])
+        plane[1].vy -= 1;
+    if (key_state[ALLEGRO_KEY_S])
+        plane[1].vy += 1;
+    if (key_state[ALLEGRO_KEY_A])
+        plane[1].vx -= 1;
+    if (key_state[ALLEGRO_KEY_D])
+        plane[1].vx += 1;
+    for(int i = 0 ; i < 2 ; i++){
+        plane[i].y += plane[i].vy * 4 * (plane[i].vx ? 0.71f : 1);
+        plane[i].x += plane[i].vx * 4 * (plane[i].vy ? 0.71f : 1);
+        if (plane[i].x - plane[i].w / 2 < 0)
+            plane[i].x = 0 + plane[i].w / 2;
+        else if (plane[i].x + plane[i].w / 2 > SCREEN_W)
+            plane[i].x = SCREEN_W - plane[i].w / 2;
+        if (plane[i].y - plane[i].h / 2 < 0)
+            plane[i].y = plane[i].h / 2;
+        else if (plane[i].y + plane[i].h / 2 > SCREEN_H)
+            plane[i].y = SCREEN_H - plane[i].w / 2;
     }
-    for (int i = 0; i < MAX_ENEMY_SHOW; i++) {
-        int ra = rand();
-        if (enemies_show[i])check_enemis(enemies[i], i);
-        else if (ra % 500 == 0)born(enemies[i], i);
+    return;
+    while(now_enemy != NULL){
+        if(change_state(&(now_enemy->val))){
+            if(now_enemy == tail){
+                tail = now_enemy->last;
+            }
+            if(now_enemy->val.type == 0)score += 10;
+            if(now_enemy->last != NULL && now_enemy->next != NULL){
+                now_enemy->next->last = now_enemy->last;
+                now_enemy->last->next = now_enemy->next;
+            }else if(now_enemy->last == NULL && now_enemy->next != NULL){
+                enemies = now_enemy->next;
+                now_enemy->next->last = NULL;
+            }else if(now_enemy->last != NULL && now_enemy->next == NULL){
+                now_enemy->last->next = NULL;
+            }else{
+                enemies = NULL;
+            }
+            LinkListMovableObject *tmp = now_enemy->next;
+            free(now_enemy);
+            now_enemy = tmp;
+        }else{
+            now_enemy = now_enemy->next;
+        }
     }
-    // [HACKATHON 2-7]
-    // TODO: Shoot if key is down and cool-down is over.
-    // 1) Get the time now using 'al_get_time'.
-    // 2) If Space key is down in 'key_state' and the time
-    //    between now and last shoot is not less that cool
-    //    down time.
-    // 3) Loop through the bullet array and find one that is hidden.
-    //    (This part can be optimized.)
-    // 4) The bullet will be found if your array is large enough.
-    // 5) Set the last shoot time to now.
-    // 6) Set hidden to false (recycle the bullet) and set its x, y to the
-    //    front part of your plane.
-    // Uncomment and fill in the code below.
-    if ((key_state[ALLEGRO_KEY_SPACE] || key_state[175])&& now - last_shoot_timestamp >= MAX_COOLDOWN) {
-        for (i = 0; i < MAX_BULLET; i++) {
-            if (bullets[i].hidden) {
-                last_shoot_timestamp = now;
-                bullets[i].hidden = 0;
-                bullets[i].x = plane.x;
-                bullets[i].y = plane.y - plane.h / 2;
+    for(int q = 0 ; q < 2 ; q++){
+        for (int i = 0; i < MAX_BULLET; i++) {
+            if (bullets[q][i].hidden)
+                continue;
+            bullets[q][i].x += bullets[q][i].vx;
+            bullets[q][i].y += bullets[q][i].vy;
+            if (bullets[q][i].y <= 0)
+                bullets[q][i].hidden = true;
+        }
+    }
+    if (((key_state[ALLEGRO_KEY_K]) && now - last_shoot_timestamp[0] >= MAX_COOLDOWN) && (plane[0].hp > 0 && !plane[0].hidden)) {
+        for (int i = 0; i < MAX_BULLET; i++) {
+            if (bullets[0][i].hidden) {
+                last_shoot_timestamp[0] = now;
+                bullets[0][i].hidden = 0;
+                bullets[0][i].x = plane[0].x;
+                bullets[0][i].y = plane[0].y - plane[0].h / 2;
                 break;
             }
         }
     }
-
+    if (((key_state[ALLEGRO_KEY_SPACE] || key_state[175])&& now - last_shoot_timestamp[1] >= MAX_COOLDOWN) && (plane[1].hp > 0 && !plane[1].hidden)) {
+        for (int i = 0; i < MAX_BULLET; i++) {
+            if (bullets[1][i].hidden) {
+                last_shoot_timestamp[1] = now;
+                bullets[1][i].hidden = 0;
+                bullets[1][i].x = plane[1].x;
+                bullets[1][i].y = plane[1].y - plane[1].h / 2;
+                break;
+            }
+        }
+    }
+    for(int i = 0 ; i < 2 ; i++){
+        if(plane[i].hp <= 0){
+            plane[i].hidden = true;
+        }
+    }
+    if(plane[0].hidden && plane[1].hidden){
+        start_scene.init = false;
+        game_change_scene(&gameover_scene);
+    }else if(score >= 100){
+        start_scene.init = false;
+        game_change_scene(&gamewin_scene);
+    }
 }
 
 static void draw_movable_object(MovableObject obj) {
@@ -263,37 +335,46 @@ static void draw_movable_object(MovableObject obj) {
         return;
     al_draw_bitmap(obj.img, round(obj.x - obj.w / 2), round(obj.y - obj.h / 2), 0);
     if (draw_gizmos) {
-        al_draw_rectangle(round(obj.x - obj.w / 2), round(obj.y - obj.h / 2),
-            round(obj.x + obj.w / 2) + 1, round(obj.y + obj.h / 2) + 1, al_map_rgb(255, 0, 0), 0);
+        // al_draw_rectangle(round(obj.x - obj.w / 2), round(obj.y - obj.h / 2),
+        //     round(obj.x + obj.w / 2) + 1, round(obj.y + obj.h / 2) + 1, al_map_rgb(255, 0, 0), 0);
+        al_draw_circle(obj.x, obj.y, max(obj.w, obj.h)/2, al_map_rgb(255, 0, 0), 0);
     }
 }
-
 static void draw(void) {
-    int i;
     al_draw_bitmap(img_background, 0, 0, 0);
-    // [HACKATHON 2-8]
-    // TODO: Draw all bullets in your bullet array.
-    // Uncomment and fill in the code below.
-    for (int i = 0 ; i < MAX_BULLET ; i++)
-        if(!bullets[i].hidden)
-            al_draw_bitmap(bullets[i].img, bullets[i].x, bullets[i].y, 0);
-    draw_movable_object(plane);
-    for(int q = 0 ; q < MAX_ENEMY_SHOW ; q++)
-        if(enemies_show[q])
-            for (i = 0; i < MAX_ENEMY; i++)
-                draw_movable_object(enemies[q][i]);
+    char score_char[10] = {"Score:"};
+//    to_string(score_char, score);
+    for(int i = 0 ; i < 2 ; i++){
+        if(plane[i].hp <= 0 || plane[i].hidden)continue;
+//        char output[50] = {};
+//        to_string(output, plane[i].hp);
+//        output[strlen(output)] = '/';
+//        to_string(output, plane[i].max_hp);
+//        al_draw_text(font_pirulen_32, al_map_rgb(0, 0, 0), plane[i].x, plane[i].y - 65, ALLEGRO_ALIGN_CENTER, output);
+        draw_movable_object(plane[i]);
+    }
+    return;
+    al_draw_text(font_pirulen_32, al_map_rgb(0, 0, 0), 130, 10, ALLEGRO_ALIGN_CENTER, score_char);
+    for(int q = 0 ; q < 2 ; q++)
+        for (int i = 0 ; i < MAX_BULLET ; i++)
+            if(!bullets[q][i].hidden)
+                draw_movable_object(bullets[q][i]);
+    LinkListMovableObject *now_enemy = enemies;
+    while(now_enemy != NULL){
+        draw_movable_object(now_enemy->val);
+        now_enemy = now_enemy->next;
+    }
 }
 
 static void destroy(void) {
     al_destroy_bitmap(img_background);
-    al_destroy_bitmap(img_plane);
-    al_destroy_bitmap(img_enemy);
+    al_destroy_bitmap(img_plane[0]);
+    al_destroy_bitmap(img_plane[1]);
+    al_destroy_bitmap(img_enemy[0]);
+    al_destroy_bitmap(img_enemy[1]);
     al_destroy_sample(bgm);
-    // [HACKATHON 2-9]
-    // TODO: Destroy your bullet image.
-    // Uncomment and fill in the code below.
     al_destroy_bitmap(img_bullet);
-    stop_bgm(bgm_id);
+//    stop_bgm(bgm_id);
     game_log("Start scene destroyed");
 }
 
@@ -302,15 +383,8 @@ static void on_key_down(int keycode) {
         draw_gizmos = !draw_gizmos;
 }
 
-// TODO: Add more event callback functions such as keyboard, mouse, ...
 
-// Functions without 'static', 'extern' prefixes is just a normal
-// function, they can be accessed by other files using 'extern'.
-// Define your normal function prototypes below.
-
-// The only function that is shared across files.
 void scene_start_create(void) {
-    game_log("Start scene start create");
     Scene scene;
     memset(&scene, 0, sizeof(Scene));
     scene.name = "Start";
@@ -323,5 +397,5 @@ void scene_start_create(void) {
     scene.init = false;
     start_scene = scene;
     game_log("Start scene created");
-    return scene;
+    return;
 }

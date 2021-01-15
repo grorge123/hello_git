@@ -110,7 +110,7 @@
 	"scene_start.h"
 	"scene_settings.h"
 
-1610699071 source:c:\users\tsao han wen\desktop\github\hello_git\final\allegro-demo\game.c
+1610710516 source:c:\users\tsao han wen\desktop\github\hello_git\final\allegro-demo\game.c
 	"game.h"
 	"utility.h"
 	"scene_menu.h"
@@ -129,33 +129,33 @@
 	<allegro5/allegro_audio.h>
 	<allegro5/allegro_acodec.h>
 
-1609223733 c:\users\tsao han wen\desktop\github\hello_git\final\allegro-demo\game.h
+1610709871 c:\users\tsao han wen\desktop\github\hello_git\final\allegro-demo\game.h
 	<allegro5/allegro.h>
 
-1608636144 c:\users\tsao han wen\desktop\github\hello_git\final\allegro-demo\utility.h
+1610709871 c:\users\tsao han wen\desktop\github\hello_git\final\allegro-demo\utility.h
 	<allegro5/allegro.h>
 	<allegro5/allegro_font.h>
 	<allegro5/allegro_audio.h>
 
-1608713781 c:\users\tsao han wen\desktop\github\hello_git\final\allegro-demo\scene_menu.h
+1610709871 c:\users\tsao han wen\desktop\github\hello_git\final\allegro-demo\scene_menu.h
 	"game.h"
 
-1608713859 c:\users\tsao han wen\desktop\github\hello_git\final\allegro-demo\scene_settings.h
+1610709871 c:\users\tsao han wen\desktop\github\hello_git\final\allegro-demo\scene_settings.h
 	"game.h"
 
-1608821404 c:\users\tsao han wen\desktop\github\hello_git\final\allegro-demo\scene_start.h
+1610709871 c:\users\tsao han wen\desktop\github\hello_git\final\allegro-demo\scene_start.h
 	"game.h"
 
-1608731819 c:\users\tsao han wen\desktop\github\hello_git\final\allegro-demo\scene_gameover.h
+1610709871 c:\users\tsao han wen\desktop\github\hello_git\final\allegro-demo\scene_gameover.h
 	"game.h"
 
-1608731617 c:\users\tsao han wen\desktop\github\hello_git\final\allegro-demo\scene_gamewin.h
+1610709871 c:\users\tsao han wen\desktop\github\hello_git\final\allegro-demo\scene_gamewin.h
 	"game.h"
 
-1608714214 source:c:\users\tsao han wen\desktop\github\hello_git\final\allegro-demo\main.c
+1610709871 source:c:\users\tsao han wen\desktop\github\hello_git\final\allegro-demo\main.c
 	"game.h"
 
-1609223909 source:c:\users\tsao han wen\desktop\github\hello_git\final\allegro-demo\scene_gameover.c
+1610709871 source:c:\users\tsao han wen\desktop\github\hello_git\final\allegro-demo\scene_gameover.c
 	"scene_gameover.h"
 	"scene_menu.h"
 	"game.h"
@@ -168,7 +168,7 @@
 	<allegro5/allegro_acodec.h>
 	<allegro5/allegro_primitives.h>
 
-1609223819 source:c:\users\tsao han wen\desktop\github\hello_git\final\allegro-demo\scene_gamewin.c
+1610709871 source:c:\users\tsao han wen\desktop\github\hello_git\final\allegro-demo\scene_gamewin.c
 	"scene_gamewin.h"
 	"scene_menu.h"
 	<allegro5/allegro.h>
@@ -180,7 +180,7 @@
 	"scene_start.h"
 	"scene_settings.h"
 
-1609223823 source:c:\users\tsao han wen\desktop\github\hello_git\final\allegro-demo\scene_settings.c
+1610709871 source:c:\users\tsao han wen\desktop\github\hello_git\final\allegro-demo\scene_settings.c
 	"scene_settings.h"
 	"scene_menu.h"
 	"scene_start.h"
@@ -192,7 +192,7 @@
 	<allegro5/allegro_font.h>
 	<allegro5/allegro_acodec.h>
 
-1610698968 source:c:\users\tsao han wen\desktop\github\hello_git\final\allegro-demo\scene_start.c
+1610710366 source:c:\users\tsao han wen\desktop\github\hello_git\final\allegro-demo\scene_start.c
 	"game.h"
 	"scene_start.h"
 	"utility.h"
@@ -202,7 +202,7 @@
 	<allegro5/allegro_image.h>
 	<allegro5/allegro_primitives.h>
 
-1608732457 source:c:\users\tsao han wen\desktop\github\hello_git\final\allegro-demo\utility.c
+1610709871 source:c:\users\tsao han wen\desktop\github\hello_git\final\allegro-demo\utility.c
 	"utility.h"
 	<allegro5/allegro.h>
 	<allegro5/allegro_image.h>
@@ -210,7 +210,7 @@
 	<allegro5/allegro_audio.h>
 	"game.h"
 
-1610611707 source:c:\users\tsao han wen\desktop\github\hello_git\final\allegro-demo\scene_menu.c
+1610709871 source:c:\users\tsao han wen\desktop\github\hello_git\final\allegro-demo\scene_menu.c
 	"scene_menu.h"
 	"game.h"
 	"utility.h"

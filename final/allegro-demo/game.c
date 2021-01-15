@@ -15,6 +15,7 @@
 #include <allegro5/allegro_ttf.h>
 #include <allegro5/allegro_audio.h>
 #include <allegro5/allegro_acodec.h>
+#define LOG_ENABLED
 
 /* Shared variables. */
 const int FPS = 800;
@@ -73,16 +74,16 @@ void game_create() {
     pthread_create(&shar_init, NULL, (void *)shared_init, NULL);
     pthread_create(&load_menu, NULL, (void *)scene_menu_create, NULL);
     pthread_create(&load_start, NULL, (void *)scene_start_create, NULL);
-//    pthread_create(&load_setting, NULL, (void *)scene_settings_create, NULL);
-//    pthread_create(&load_gameover, NULL, (void *)scene_gameover_create, NULL);
-//    pthread_create(&load_gamewin, NULL, (void *)scene_gamewin_create, NULL);
+    pthread_create(&load_setting, NULL, (void *)scene_settings_create, NULL);
+    pthread_create(&load_gameover, NULL, (void *)scene_gameover_create, NULL);
+    pthread_create(&load_gamewin, NULL, (void *)scene_gamewin_create, NULL);
     pthread_join(shar_init, NULL);
     pthread_join(load_menu, NULL);
     pthread_join(load_start, NULL);
-//    pthread_join(load_setting, NULL);
-//    pthread_join(load_gameover, NULL);
-//    pthread_join(load_gamewin, NULL);
-    game_change_scene(&start_scene);
+    pthread_join(load_setting, NULL);
+    pthread_join(load_gameover, NULL);
+    pthread_join(load_gamewin, NULL);
+    game_change_scene(&menu_scene);
     game_log("Game initialized");
     // Draw the first frame.
 
@@ -212,11 +213,10 @@ static void game_start_event_loop(void) {
         }
         // TODO: Process more events and call callbacks by adding more
         // entries inside Scene.
-        printf("redraws %d event.type %d %d %d\n", redraws, event.type, ALLEGRO_EVENT_TIMER, al_is_event_queue_empty(game_event_queue));
         // Redraw
         if (redraws > 0 && al_is_event_queue_empty(game_event_queue)) {
-            if (redraws > 1)
-                game_log("%d frame(s) dropped", redraws - 1);
+//            if (redraws > 1)
+//                game_log("%d frame(s) dropped", redraws - 1);
 //                printf("%d frame(s) dropped", redraws - 1);
             // Update and draw the next frame.
             game_update();

@@ -117,8 +117,7 @@ LinkListMovableObject* find_tail(LinkListMovableObject *now){
 static void init(void) {
     score = 0;
     if(!img_background)
-        img_background = load_bitmap_resized(".\\img\\main-bg.jpg", SCREEN_W, SCREEN_H);
-    return;
+        img_background = load_bitmap_resized(".\\img\\start-bg.jpg", SCREEN_W, SCREEN_H);
     clear_link_list(enemies);
     img_plane[0] = plane[0].img = load_bitmap(plane_img[0]);
     img_plane[1] = plane[1].img = load_bitmap(plane_img[1]);
@@ -225,11 +224,10 @@ bool change_state(MovableObject *now){
 }
 
 static void update(void) {
-    return;
     double now = al_get_time();
-//    if(!((int)now % 5)){
-//        if(rand()%50==0)born(0);
-//    }
+    if(!((int)now % 5)){
+        if(rand()%50==0)born(0);
+    }
     LinkListMovableObject* now_enemy = enemies;
     while(now_enemy != NULL){
         if(change_state(&(now_enemy->val))){
@@ -341,7 +339,6 @@ static void draw_movable_object(MovableObject obj) {
     }
 }
 static void draw(void) {
-    return;
     al_draw_bitmap(img_background, 0, 0, 0);
     char score_char[10] = {"Score:"};
     to_string(score_char, score);
@@ -370,7 +367,8 @@ static void destroy(void) {
     al_destroy_bitmap(img_background);
     al_destroy_bitmap(img_plane[0]);
     al_destroy_bitmap(img_plane[1]);
-    al_destroy_bitmap(img_enemy);
+    al_destroy_bitmap(img_enemy[0]);
+    al_destroy_bitmap(img_enemy[1]);
     al_destroy_sample(bgm);
     al_destroy_bitmap(img_bullet);
 //    stop_bgm(bgm_id);
