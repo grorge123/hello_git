@@ -5,21 +5,13 @@ loaded font: .\img\pirulen.ttf with size 32
 loaded font: .\img\pirulen.ttf with size 24
 Menu scene start creat
 loaded font: .\img\pirulen.ttf with size 32
-loaded font: .\img\pirulen.ttf with size 24
 Menu scene created
+loaded font: .\img\pirulen.ttf with size 24
 loaded image: .\img\main-bg.jpg
 resized image: .\img\main-bg.jpg
-loaded image: .\img\plane.png
-loaded image: .\img\plane.png
-loaded image: .\img\rocket-4.png
-loaded image: .\img\image12.png
-loaded image: .\img\rocket-1.png
-Start scene initialized
 Start scene created
 Change scene from (unnamed) to Start
 active scene init
-loaded image: .\img\plane.png
-loaded image: .\img\plane.png
-Start scene initialized
 Game initialized
 Game start event loop
+36 frame(s) dropped

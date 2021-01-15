@@ -1,0 +1,192 @@
+There are total 16 supported mouse buttons
+Allegro5 initialized
+Game begin
+loaded font: .\img\pirulen.ttf with size 32
+loaded font: .\img\pirulen.ttf with size 24
+Change scene from (unnamed) to (unnamed)
+Menu scene start create
+loaded font: .\img\pirulen.ttf with size 32
+Start scene start create
+Game over scene start creat
+Settings scene created
+Gamewin scene start creat
+loaded font: .\img\pirulen.ttf with size 24
+Change scene from (unnamed) to (unnamed)
+loaded image: .\img\start-bg.jpg
+loaded image: .\img\main-bg.jpg
+loaded image: .\img\gameover-bg.jpg
+loaded image: .\img\gamewin-bg.jpg
+resized image: .\img\main-bg.jpg
+resized image: .\img\gameover-bg.jpg
+resized image: .\img\gamewin-bg.jpg
+gameover scene initialized
+gamewin scene initialized
+Game over scene created
+Gamewin scene created
+resized image: .\img\start-bg.jpg
+loaded image: .\img\plane.png
+loaded image: .\img\rocket-4.png
+loaded audio: .\img\S31-Night Prowler.ogg
+played audio (bgm)
+Menu scene initialized
+Menu scene created
+loaded audio: .\img\mythica.ogg
+Start scene initialized
+played audio (bgm)
+Start scene created
+Change scene from (unnamed) to Menu
+Game initialized
+Game start event loop
+Mouse button 1 down at (420, 255)
+Mouse button 1 up at (422, 255)
+Key with keycode 67 down
+Change scene from Menu to Start
+active scene init
+loaded image: .\img\start-bg.jpg
+resized image: .\img\start-bg.jpg
+loaded image: .\img\plane.png
+loaded image: .\img\rocket-4.png
+loaded audio: .\img\mythica.ogg
+Start scene initialized
+played audio (bgm)
+Key with keycode 67 up
+Key with keycode 82 down
+Change scene from Start to Game over
+Key with keycode 82 up
+Key with keycode 84 down
+Key with keycode 83 down
+Key with keycode 84 up
+Key with keycode 84 down
+Key with keycode 83 up
+Key with keycode 84 up
+Key with keycode 82 down
+Key with keycode 84 down
+Key with keycode 82 up
+Key with keycode 85 down
+Key with keycode 85 up
+Key with keycode 84 up
+Key with keycode 83 down
+Key with keycode 84 down
+Key with keycode 83 up
+Key with keycode 85 down
+Key with keycode 85 up
+Key with keycode 84 up
+Key with keycode 82 down
+Key with keycode 82 up
+Key with keycode 82 down
+Key with keycode 85 down
+Key with keycode 82 up
+Key with keycode 83 down
+Key with keycode 85 up
+Key with keycode 84 down
+Key with keycode 83 up
+Key with keycode 84 up
+Key with keycode 82 down
+Key with keycode 82 up
+Key with keycode 67 down
+Change scene from Game over to Menu
+Key with keycode 67 up
+Key with keycode 83 down
+Key with keycode 83 up
+Key with keycode 67 down
+Change scene from Menu to Start
+Change scene from Start to Game over
+Key with keycode 67 up
+Key with keycode 83 down
+Key with keycode 83 up
+Key with keycode 67 down
+Change scene from Game over to Menu
+Key with keycode 67 up
+Key with keycode 67 down
+Change scene from Menu to Start
+Change scene from Start to Game over
+Key with keycode 67 up
+Key with keycode 67 down
+Change scene from Game over to Menu
+Key with keycode 67 up
+Key with keycode 67 down
+Change scene from Menu to Start
+Change scene from Start to Game over
+Key with keycode 67 up
+Key with keycode 67 down
+Change scene from Game over to Menu
+Key with keycode 67 up
+Key with keycode 67 down
+Change scene from Menu to Start
+Change scene from Start to Game over
+Key with keycode 67 up
+Key with keycode 67 down
+Change scene from Game over to Menu
+Key with keycode 67 up
+Key with keycode 67 down
+Change scene from Menu to Start
+Change scene from Start to Game over
+Key with keycode 67 up
+Key with keycode 67 down
+Change scene from Game over to Menu
+Key with keycode 67 up
+Key with keycode 67 down
+Change scene from Menu to Start
+Change scene from Start to Game over
+Key with keycode 67 up
+Key with keycode 67 down
+Change scene from Game over to Menu
+Key with keycode 67 up
+Key with keycode 67 down
+Change scene from Menu to Start
+Change scene from Start to Game over
+Key with keycode 67 up
+Key with keycode 67 down
+Change scene from Game over to Menu
+Key with keycode 67 up
+Mouse button 1 down at (748, 48)
+Change scene from Menu to setting
+active scene init
+setting scene start initializ
+loaded image: .\img\setting-bg.jpg
+resized image: .\img\setting-bg.jpg
+loaded image: .\img\img_single.png
+resized image: .\img\img_single.png
+loaded image: .\img\img_double.png
+resized image: .\img\img_double.png
+loaded image: .\img\img_player1.png
+resized image: .\img\img_player1.png
+loaded image: .\img\img_player2.png
+resized image: .\img\img_player2.png
+loaded image: .\img\img_player3.png
+resized image: .\img\img_player3.png
+setting scene initialized
+Mouse button 1 up at (748, 48)
+Key with keycode 85 down
+Key with keycode 83 down
+Key with keycode 83 up
+Key with keycode 82 down
+Key with keycode 85 up
+Key with keycode 83 down
+Key with keycode 84 down
+Key with keycode 83 up
+Key with keycode 82 up
+Key with keycode 84 up
+Key with keycode 83 down
+Key with keycode 82 down
+Key with keycode 85 down
+Key with keycode 83 up
+Key with keycode 85 up
+Key with keycode 82 up
+Key with keycode 83 down
+Key with keycode 84 down
+Key with keycode 83 up
+Key with keycode 84 up
+Key with keycode 60 down
+Key with keycode 60 up
+Key with keycode 59 down
+Change scene from setting to Menu
+Key with keycode 59 up
+Key with keycode 59 down
+Key with keycode 59 up
+Key with keycode 59 down
+Key with keycode 59 up
+Window close button clicked
+Game end
+stop audio (bgm)
+Menu scene destroyed

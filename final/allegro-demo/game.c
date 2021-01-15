@@ -17,7 +17,7 @@
 #include <allegro5/allegro_acodec.h>
 
 /* Shared variables. */
-const int FPS = 144;
+const int FPS = 800;
 const int SCREEN_W = 800;
 const int SCREEN_H = 600;
 const int RESERVE_SAMPLES = 10;
@@ -216,8 +216,8 @@ static void game_start_event_loop(void) {
         // Redraw
         if (redraws > 0 && al_is_event_queue_empty(game_event_queue)) {
             if (redraws > 1)
-//                game_log("%d frame(s) dropped", redraws - 1);
-                printf("%d frame(s) dropped", redraws - 1);
+                game_log("%d frame(s) dropped", redraws - 1);
+//                printf("%d frame(s) dropped", redraws - 1);
             // Update and draw the next frame.
             game_update();
             game_draw();

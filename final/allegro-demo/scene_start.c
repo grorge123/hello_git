@@ -118,6 +118,7 @@ static void init(void) {
     score = 0;
     if(!img_background)
         img_background = load_bitmap_resized(".\\img\\main-bg.jpg", SCREEN_W, SCREEN_H);
+    return;
     clear_link_list(enemies);
     img_plane[0] = plane[0].img = load_bitmap(plane_img[0]);
     img_plane[1] = plane[1].img = load_bitmap(plane_img[1]);
@@ -340,8 +341,8 @@ static void draw_movable_object(MovableObject obj) {
     }
 }
 static void draw(void) {
-    al_draw_bitmap(img_background, 0, 0, 0);
     return;
+    al_draw_bitmap(img_background, 0, 0, 0);
     char score_char[10] = {"Score:"};
     to_string(score_char, score);
     al_draw_text(font_pirulen_32, al_map_rgb(0, 0, 0), 130, 10, ALLEGRO_ALIGN_CENTER, score_char);

@@ -81,7 +81,7 @@ void scene_menu_create(void) {
     scene.destroy = &destroy;
     scene.on_key_down = &on_key_down;
     scene.on_mouse_down = &on_mouse_down;
-     scene.init = false;
+    scene.init = false;
     menu_scene = scene;
     game_log("%s scene created",scene.name);
     return;

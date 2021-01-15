@@ -13,7 +13,7 @@
 #include <allegro5/allegro_acodec.h>
 
 /* Shared variables. */
-const int FPS = 144;
+const int FPS = 800;
 const int SCREEN_W = 800;
 const int SCREEN_H = 600;
 const int RESERVE_SAMPLES = 10;
