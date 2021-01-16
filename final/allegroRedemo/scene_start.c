@@ -154,7 +154,7 @@ static void init(void) {
     for(int i = 0 ; i < 2 ; i++){
         plane[i].w = al_get_bitmap_width(plane[i].img);
         plane[i].h = al_get_bitmap_height(plane[i].img);
-        plane[i].hp = plane[i].max_hp = 10000000;
+        plane[i].hp = plane[i].max_hp = 300;
         plane[i].hidden = false;
     }
     skill_prepare = 0;
@@ -513,7 +513,7 @@ static void update_move(double now){
     //skill launch
     if(key_state[ALLEGRO_KEY_H] && now - skill_end > skill_COOLDOWN){
         skill_start = now;
-        skill_end = now + 10;
+        skill_end = now + 30;
         now_status = 2;
     }
 }
@@ -531,7 +531,7 @@ static void check_state(void){
         else if (plane[i].y + plane[i].h / 2 > SCREEN_H)
             plane[i].y = SCREEN_H - plane[i].w / 2;
     }
-    if(score >= 100){
+    if(score >= 1000){
         boss.hidden = false;
     }
     for(int i = 0 ; i < 2 ; i++){
@@ -565,8 +565,8 @@ static void boss_attack(void){
         enemy->vy = sin(k / 180 * ALLEGRO_PI) * v;
         enemy->data[0] = enemy->vx;
         enemy->data[1] = enemy->vy;
-        enemy->data[2] = 3;
-        enemy->data[3] = 3;
+        enemy->data[2] = 2;
+        enemy->data[3] = 2;
         enemy->cvx = &type_6_change_v_x;
         enemy->cvy = &type_6_change_v_y;
         enemy->type = 6;
@@ -584,7 +584,7 @@ static void boss_attack(void){
     }
 }
 static void boss_update(double now){
-    if(!now_status || boss.hidden)return;
+    if(!now_status || boss.hidden || boss.hp < 0)return;
     if((int)now % 3 == 0){
         boss.x = rand() % SCREEN_W;
         boss.y = rand() % SCREEN_H;
@@ -785,15 +785,24 @@ static void draw(void) {
             al_draw_rotated_bitmap(img_knife, al_get_bitmap_width(img_knife)/2,al_get_bitmap_height(img_knife)/2, plane[i].x, plane[i].y,knife_ange[i],ALLEGRO_FLIP_VERTICAL);
         }
     }
-    if(!boss.hidden)draw_movable_object(boss);
+    //draw boss
+    if(!boss.hidden){
+        draw_movable_object(boss);
+        double length = 1500;
+        al_draw_filled_rectangle(300, 0 ,max(300, 300 + (length*((double)boss.hp/boss.max_hp))), 50, al_map_rgb(153, 255, 0));
+        al_draw_filled_rectangle(max(300 + (length*((double)boss.hp/boss.max_hp)), 300), 0, 300 + length, 50, al_map_rgb(255, 0, 0));
+    }
     //draw plane
     for(int i = 0 ; i < 2 ; i++){
         if(plane[i].hp <= 0 || plane[i].hidden)continue;
         char output[50] = {};
-        to_string(output, plane[i].hp);
-        output[strlen(output)] = '/';
-        to_string(output, plane[i].max_hp);
-        al_draw_text(font_pirulen_32, al_map_rgb(0, 0, 0), plane[i].x, plane[i].y - 65, ALLEGRO_ALIGN_CENTER, output);
+//        to_string(output, plane[i].hp);
+//        output[strlen(output)] = '/';
+//        to_string(output, plane[i].max_hp);
+//        al_draw_text(font_pirulen_32, al_map_rgb(0, 0, 0), plane[i].x, plane[i].y - 65, ALLEGRO_ALIGN_CENTER, output);
+        double length = 100;
+        al_draw_filled_rectangle(plane[i].x - plane[i].w, plane[i].y + plane[i].h, plane[i].x - plane[i].w + (length*((double)plane[i].hp/plane[i].max_hp)), plane[i].y + plane[i].h + 10, al_map_rgb(153, 255, 0));
+        al_draw_filled_rectangle(plane[i].x - plane[i].w + (length*((double)plane[i].hp/plane[i].max_hp)), plane[i].y + plane[i].h, plane[i].x - plane[i].w + length, plane[i].y + plane[i].h + 10, al_map_rgb(255, 0, 0));
         draw_movable_object(plane[i]);
     }
     //draw bullet
