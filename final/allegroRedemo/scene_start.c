@@ -513,7 +513,7 @@ static void update_move(double now){
     //skill launch
     if(key_state[ALLEGRO_KEY_H] && now - skill_end > skill_COOLDOWN){
         skill_start = now;
-        skill_end = now + 30;
+        skill_end = now + 10;
         now_status = 2;
     }
 }
