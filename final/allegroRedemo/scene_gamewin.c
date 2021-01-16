@@ -30,7 +30,7 @@ static void init(void) {
 static void draw(void) {
      al_draw_bitmap(img_background, 0, 0, 0);
      char txt_info[] = "Press enter key to restart";
-     al_draw_text(font_pirulen_24, al_map_rgb(0, 0, 0), 20, SCREEN_H - 50, 0, txt_info);
+     al_draw_text(font_pirulen_24, al_map_rgb(255, 255, 255), 20, SCREEN_H - 50, 0, txt_info);
 }
 
 static void destroy(void) {

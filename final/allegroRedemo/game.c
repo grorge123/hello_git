@@ -235,8 +235,10 @@ static void game_update(void) {
 }
 
 static void game_draw(void) {
+//    al_hold_bitmap_drawing(true);
     if (active_scene.draw)
         (*active_scene.draw)();
+//    al_hold_bitmap_drawing(false);
     al_flip_display();
 }
 

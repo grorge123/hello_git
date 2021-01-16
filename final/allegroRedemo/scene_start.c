@@ -21,6 +21,7 @@
 /* Define your static vars / function prototypes below. */
 
 static ALLEGRO_BITMAP* img_background;
+static ALLEGRO_BITMAP* img_background2;
 static ALLEGRO_BITMAP* img_plane[2];
 static ALLEGRO_BITMAP* img_enemy[5];
 static ALLEGRO_BITMAP* img_knife;
@@ -121,7 +122,7 @@ static void init(void) {
     if(!img_enemy[1])
         img_enemy[1] = load_bitmap(".\\img\\rocket-3.png");
     if(!img_enemy[2])
-        img_enemy[2] = load_bitmap(".\\img\\rocket-3.png");
+        img_enemy[2] = load_bitmap(".\\img\\rocket-1.png");
     if(!img_enemy[3])
         img_enemy[3] = load_bitmap(".\\img\\boss_bullet.png");
     if(!img_bullet)
@@ -134,8 +135,9 @@ static void init(void) {
         img_skill_bullet = load_bitmap(".\\img\\skill_bullet.png");
     if(!img_boss)
         img_boss = load_bitmap(".\\img\\rocket-2.png");
-    if(!img_background)
-        img_background = load_bitmap_resized(".\\img\\start-bg.jpg", SCREEN_W, SCREEN_H);
+    if(!img_background2)
+        img_background2 = load_bitmap_resized(".\\img\\star-bg.jpg", SCREEN_W, SCREEN_H);
+    img_background = load_bitmap_resized(".\\img\\start-bg.jpg", SCREEN_W, SCREEN_H);
     clear_link_list(enemies);
     img_plane[0] = plane[0].img = load_bitmap(plane_img[0]);
     img_plane[1] = plane[1].img = load_bitmap(plane_img[1]);
@@ -144,7 +146,7 @@ static void init(void) {
     plane[1].x = 600;
     plane[1].y = 500;
     boss.hidden = true;
-    boss.hp = boss.max_hp = 200;
+    boss.hp = boss.max_hp = 800;
     boss.x = SCREEN_W / 2;
     boss.y = SCREEN_H / 2;
     boss.img = img_boss;
@@ -373,8 +375,8 @@ static bool change_state(MovableObject *now, double now_time){
     }
     for(int i = 0 ; i < 2 ; i++){
         MovableObject tmp = plane[i];
-        tmp.w *= 2;
-        tmp.h *= 2;
+        tmp.w *= 3;
+        tmp.h *= 3;
         if(!knife_hidden[i] && collision(*now, tmp)){
             score += now->val;
             return true;
@@ -533,6 +535,7 @@ static void check_state(void){
     }
     if(score >= 1000){
         boss.hidden = false;
+        img_background = img_background2;
     }
     for(int i = 0 ; i < 2 ; i++){
         if(plane[i].hp <= 0){
@@ -601,8 +604,8 @@ static void boss_update(double now){
     }
     for(int i = 0 ; i < 2 ; i++){
         MovableObject tmp = plane[i];
-        tmp.w *= 2;
-        tmp.h *= 2;
+        tmp.w *= 3;
+        tmp.h *= 3;
         if(!knife_hidden[i] && collision(boss, tmp)){
             if(now - boss_invincible >= 0.2){
                 boss_invincible = now;
@@ -715,19 +718,19 @@ static void update(void) {
 static void draw_movable_object(MovableObject obj) {
     if (obj.hidden)
         return;
-    if(obj.type == 1 || obj.type == 2 || obj.type == 3)
-        al_draw_filled_rectangle(obj.x-obj.w/2,obj.y-obj.h/2,obj.x+obj.w/2,obj.y+obj.h/2,al_map_rgb(255, 255, 0));
-    else if(obj.type == 4)
-        al_draw_filled_rectangle(obj.x-obj.w/2,obj.y-obj.h/2,obj.x+obj.w/2,obj.y+obj.h/2,al_map_rgb(255, 0, 0));
-    else if(obj.type == 5)
-        al_draw_filled_rectangle(obj.x-obj.w/2,obj.y-obj.h/2,obj.x+obj.w/2,obj.y+obj.h/2,al_map_rgb(90, 0, 173));
-    else if(obj.type == -1)
-        al_draw_filled_rectangle(obj.x-obj.w/2,obj.y-obj.h/2,obj.x+obj.w/2,obj.y+obj.h/2,al_map_rgb(70, 117, 0));
-    else if(obj.type == 6)
-        al_draw_filled_circle(obj.x, obj.y, obj.w, al_map_rgb(255, 51, 153));
-    else if(obj.img == img_bullet)
-        al_draw_filled_circle(obj.x, obj.y, obj.w, al_map_rgb(79, 79, 79));
-    else
+//    if(obj.type == 1 || obj.type == 2 || obj.type == 3)
+//        al_draw_filled_rectangle(obj.x-obj.w/2,obj.y-obj.h/2,obj.x+obj.w/2,obj.y+obj.h/2,al_map_rgb(255, 255, 0));
+//    else if(obj.type == 4)
+//        al_draw_filled_rectangle(obj.x-obj.w/2,obj.y-obj.h/2,obj.x+obj.w/2,obj.y+obj.h/2,al_map_rgb(255, 0, 0));
+//    else if(obj.type == 5)
+//        al_draw_filled_rectangle(obj.x-obj.w/2,obj.y-obj.h/2,obj.x+obj.w/2,obj.y+obj.h/2,al_map_rgb(90, 0, 173));
+//    else if(obj.type == -1)
+//        al_draw_filled_rectangle(obj.x-obj.w/2,obj.y-obj.h/2,obj.x+obj.w/2,obj.y+obj.h/2,al_map_rgb(70, 117, 0));
+//    else if(obj.type == 6)
+//        al_draw_filled_circle(obj.x, obj.y, obj.w, al_map_rgb(255, 51, 153));
+//    else if(obj.img == img_bullet)
+//        al_draw_filled_circle(obj.x, obj.y, obj.w, al_map_rgb(79, 79, 79));
+//    else
         al_draw_bitmap(obj.img, round(obj.x - obj.w / 2), round(obj.y - obj.h / 2), 0);
     if (draw_gizmos) {
         // al_draw_rectangle(round(obj.x - obj.w / 2), round(obj.y - obj.h / 2),
@@ -745,27 +748,27 @@ static void draw(void) {
     }
     double now = al_get_time();
     //draw background
-//    al_draw_bitmap(img_background, 0, 0, 0);
-    al_draw_filled_rectangle(0,0,SCREEN_W,SCREEN_H,al_map_rgb(255,255,255));
+    al_draw_bitmap(img_background, 0, 0, 0);
+//    al_draw_filled_rectangle(0,0,SCREEN_W,SCREEN_H,al_map_rgb(255,255,255));
     if(now_status == 2){
         if(now - last_change > 0.05){
             rainbow++;rainbow%=7;
             last_change = now;
         }
         if(rainbow == 0)
-            al_draw_filled_rectangle(0,0,SCREEN_W,SCREEN_H,al_map_rgba(255,0,0,62));
+            al_draw_filled_rectangle(0,0,SCREEN_W,SCREEN_H,al_map_rgba(255,0,0,3));
         else if(rainbow == 1)
-            al_draw_filled_rectangle(0,0,SCREEN_W,SCREEN_H,al_map_rgba(255,165,0,62));
+            al_draw_filled_rectangle(0,0,SCREEN_W,SCREEN_H,al_map_rgba(255,165,0,3));
         else if(rainbow == 2)
-            al_draw_filled_rectangle(0,0,SCREEN_W,SCREEN_H,al_map_rgba(255,255,0,62));
+            al_draw_filled_rectangle(0,0,SCREEN_W,SCREEN_H,al_map_rgba(255,255,0,3));
         else if(rainbow == 3)
-            al_draw_filled_rectangle(0,0,SCREEN_W,SCREEN_H,al_map_rgba(0,127,255,62));
+            al_draw_filled_rectangle(0,0,SCREEN_W,SCREEN_H,al_map_rgba(0,127,255,3));
         else if(rainbow == 4)
-            al_draw_filled_rectangle(0,0,SCREEN_W,SCREEN_H,al_map_rgba(0,0,255,62));
+            al_draw_filled_rectangle(0,0,SCREEN_W,SCREEN_H,al_map_rgba(0,0,255,3));
         else if(rainbow == 5)
-            al_draw_filled_rectangle(0,0,SCREEN_W,SCREEN_H,al_map_rgba(0,0,0,62));
+            al_draw_filled_rectangle(0,0,SCREEN_W,SCREEN_H,al_map_rgba(0,0,0,3));
         else if(rainbow == 6)
-            al_draw_filled_rectangle(0,0,SCREEN_W,SCREEN_H,al_map_rgba(139,0,255,62));
+            al_draw_filled_rectangle(0,0,SCREEN_W,SCREEN_H,al_map_rgba(139,0,255,3));
         for(int i = 0 ; i < skill_bullet_size ; i++){
             if(!skill_bullets[i].hidden)draw_movable_object(skill_bullets[i]);
         }
@@ -849,8 +852,8 @@ void scene_start_create(void) {
     scene.draw = &draw;
     scene.destroy = &destroy;
     scene.on_key_down = &on_key_down;
-    scene.initialize();
-    scene.init = false;
+//    scene.initialize();
+//    scene.init = false;
     start_scene = scene;
     game_log("Start scene created");
     return;

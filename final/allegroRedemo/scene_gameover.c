@@ -22,7 +22,7 @@ static void destroy(void);
 static void on_key_down(int keycode);
 
 static void init(void) {
-    img_background = load_bitmap_resized(".\\img\\gameover-bg.jpg", SCREEN_W, SCREEN_H);
+    img_background = load_bitmap_resized(".\\img\\gameover-bg.png", SCREEN_W, SCREEN_H);
 //    bgm = load_audio(".\\img\\S31-Night Prowler.ogg");
 //    bgm_id = play_bgm(bgm, 1);
     game_log("gameover scene initialized");
