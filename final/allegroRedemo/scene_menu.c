@@ -50,7 +50,7 @@ static void init(void) {
     setting_button_y = 0 + al_get_bitmap_height(img_settings2);
     // Can be moved to shared_init to decrease loading time.
     bgm = load_audio(".\\img\\S31-Night Prowler.ogg");
-    bgm_id = play_bgm(bgm, 1);
+//    bgm_id = play_bgm(bgm, 1);
     game_log("Menu scene initialized");
 }
 

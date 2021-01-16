@@ -22,9 +22,9 @@
 
 
 /* Shared variables. */
-const int FPS = 800;
-const int SCREEN_W = 800;
-const int SCREEN_H = 600;
+const int FPS = 144;
+const int SCREEN_W = 1900;
+const int SCREEN_H = 1000;
 const int RESERVE_SAMPLES = 10;
 
 Scene active_scene;
@@ -159,10 +159,10 @@ static void allegro5_init(void) {
     al_start_timer(game_update_timer);
 }
 
+int redraws = 0;
 static void game_start_event_loop(void) {
     bool done = false;
     ALLEGRO_EVENT event;
-    int redraws = 0;
     while (!done) {
         al_wait_for_event(game_event_queue, &event);
         if (event.type == ALLEGRO_EVENT_DISPLAY_CLOSE) {

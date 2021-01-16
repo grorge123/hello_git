@@ -42,6 +42,10 @@
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="move_function.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="move_function.h" />
 		<Unit filename="scene_gameover.c">
 			<Option compilerVar="CC" />
 		</Unit>
