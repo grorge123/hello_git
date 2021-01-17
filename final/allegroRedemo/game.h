@@ -20,6 +20,7 @@
 // If defined, logs will be shown on console and written to file.
 // If commented out, logs will not be shown nor be saved.
 #define LOG_ENABLED
+#include <allegro5/allegro_acodec.h>
 
 // Types of function pointers.
 typedef void(*func_ptr)(void);
@@ -62,6 +63,14 @@ extern Scene start_scene;
 extern Scene setting_scene;
 extern Scene gameover_scene;
 extern Scene gamewin_scene;
+
+
+extern ALLEGRO_SAMPLE* bgm_menu;
+extern ALLEGRO_SAMPLE* bgm_start;
+extern ALLEGRO_SAMPLE* bgm_boss;
+extern ALLEGRO_SAMPLE_ID bgm_id;
+
+
 // Keyboard state, whether the key is down or not.
 extern bool key_state[ALLEGRO_KEY_MAX];
 // Mouse state, whether the key is down or not.

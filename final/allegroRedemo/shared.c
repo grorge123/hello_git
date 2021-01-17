@@ -12,7 +12,8 @@ ALLEGRO_FONT* font_pirulen_24;
 void shared_init(void) {
     font_pirulen_32 = load_font(".\\img\\pirulen.ttf", 32);
     font_pirulen_24 = load_font(".\\img\\pirulen.ttf", 24);
-    game_change_scene(&menu_scene);
+    bgm_menu = load_audio(".\\img\\S31-Night Prowler.ogg");
+    bgm_start = load_audio(".\\img\\start.ogg");
 }
 
 void shared_destroy(void) {

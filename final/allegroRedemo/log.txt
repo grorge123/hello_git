@@ -3,35 +3,64 @@ Allegro5 initialized
 Game begin
 loaded font: .\img\pirulen.ttf with size 32
 loaded font: .\img\pirulen.ttf with size 24
-Change scene from (unnamed) to (unnamed)
-Menu scene start create
-Settings scene created
+loaded audio: .\img\S31-Night Prowler.ogg
+loaded audio: .\img\start.ogg
 Start scene created
+Menu scene start create
 loaded font: .\img\pirulen.ttf with size 32
-Gamewin scene start creat
+Settings scene created
 loaded font: .\img\pirulen.ttf with size 24
-Change scene from (unnamed) to (unnamed)
+Game over scene start creat
+Gamewin scene start creat
 loaded image: .\img\gamewin-bg.jpg
 loaded image: .\img\main-bg.jpg
 loaded image: .\img\gameover-bg.png
+resized image: .\img\main-bg.jpg
 resized image: .\img\gamewin-bg.jpg
 gamewin scene initialized
 Gamewin scene created
-resized image: .\img\main-bg.jpg
 resized image: .\img\gameover-bg.png
 gameover scene initialized
 Game over scene created
 loaded audio: .\img\S31-Night Prowler.ogg
+loaded audio: .\img\boss.ogg
 Menu scene initialized
 Menu scene created
+loaded audio: .\img\start.ogg
+played audio (bgm)
 Change scene from (unnamed) to Menu
 Game initialized
 Game start event loop
-Mouse button 1 down at (822, 592)
-Mouse button 1 up at (839, 592)
-Key with keycode 216 down
-Key with keycode 216 up
+Mouse button 1 down at (1055, 440)
+Mouse button 1 up at (1055, 440)
+Mouse button 1 down at (1842, 45)
+Change scene from Menu to setting
+active scene init
+setting scene start initializ
+loaded image: .\img\setting-bg.jpg
+resized image: .\img\setting-bg.jpg
+loaded image: .\img\img_single.png
+resized image: .\img\img_single.png
+loaded image: .\img\img_double.png
+resized image: .\img\img_double.png
+loaded image: .\img\img_player1.png
+resized image: .\img\img_player1.png
+loaded image: .\img\img_player2.png
+resized image: .\img\img_player2.png
+loaded image: .\img\img_player3.png
+resized image: .\img\img_player3.png
+setting scene initialized
+Mouse button 1 up at (1836, 46)
+Key with keycode 83 down
+Key with keycode 83 up
 Key with keycode 67 down
+Key with keycode 67 up
+Key with keycode 59 down
+Change scene from setting to Menu
+Key with keycode 59 up
+Key with keycode 67 down
+stop audio (bgm)
+played audio (bgm)
 Change scene from Menu to Start
 active scene init
 loaded audio: .\img\shot.ogg
@@ -56,1718 +85,568 @@ loaded image: .\img\plane.png
 loaded image: .\img\plane.png
 Start scene initialized
 Key with keycode 67 up
-Key with keycode 83 down
-Key with keycode 67 down
-Key with keycode 67 up
-Key with keycode 83 up
-Key with keycode 216 down
-played audio (once)
-Key with keycode 216 up
-Key with keycode 216 down
-Key with keycode 216 up
+Key with keycode 1 down
+Key with keycode 19 down
+Key with keycode 82 down
 Key with keycode 84 down
-Key with keycode 83 down
+Key with keycode 4 down
+Key with keycode 82 up
 Key with keycode 84 up
+Key with keycode 215 down
+played audio (once)
+Key with keycode 1 up
+Key with keycode 19 up
+Key with keycode 83 down
 Key with keycode 216 down
+Key with keycode 84 down
+played audio (once)
+Key with keycode 1 down
+Key with keycode 1 up
+Key with keycode 84 up
+Key with keycode 19 down
+Key with keycode 84 down
+Key with keycode 84 up
+Key with keycode 84 down
+Key with keycode 83 up
+Key with keycode 1 down
+Key with keycode 84 up
+Key with keycode 1 up
+Key with keycode 4 up
+Key with keycode 19 up
 Key with keycode 216 up
-Key with keycode 216 down
-Key with keycode 216 up
-Key with keycode 157 down
-Key with keycode 216 down
-Key with keycode 11 up
-Key with keycode 216 up
-Key with keycode 157 down
-Key with keycode 11 up
-Key with keycode 216 down
-Key with keycode 157 down
-Key with keycode 85 down
-Key with keycode 11 up
-Key with keycode 216 up
-Key with keycode 157 down
+Key with keycode 215 up
 Key with keycode 216 down
 played audio (once)
-Key with keycode 11 up
-Key with keycode 216 up
-Key with keycode 85 up
+Key with keycode 215 down
+played audio (once)
+Key with keycode 19 down
+Key with keycode 1 down
+Key with keycode 83 down
+Key with keycode 19 up
+Key with keycode 19 down
+Key with keycode 1 up
 Key with keycode 83 up
+Key with keycode 85 down
+Key with keycode 1 down
+played audio (once)
+played audio (once)
+Key with keycode 1 up
+Key with keycode 1 down
+Key with keycode 1 up
+played audio (once)
+played audio (once)
+Key with keycode 157 down
+Key with keycode 11 down
+played audio (once)
+played audio (once)
+Key with keycode 4 down
+Key with keycode 85 up
+played audio (once)
+played audio (once)
+Key with keycode 19 up
+played audio (once)
+Key with keycode 67 down
+Key with keycode 85 down
+played audio (once)
+Key with keycode 75 up
+played audio (once)
+played audio (once)
+Key with keycode 11 up
+Key with keycode 85 up
+played audio (once)
+Key with keycode 19 down
+Key with keycode 1 down
+Key with keycode 157 down
+Key with keycode 1 up
+Key with keycode 4 up
+Key with keycode 1 down
+Key with keycode 1 up
+Key with keycode 75 up
+Key with keycode 19 up
+Key with keycode 67 up
+Key with keycode 215 up
+Key with keycode 216 up
 Key with keycode 217 down
 Key with keycode 217 up
 Key with keycode 75 up
+Key with keycode 215 down
+played audio (once)
+Key with keycode 157 down
+Key with keycode 67 down
 Key with keycode 216 down
-Key with keycode 83 down
+played audio (once)
+Key with keycode 85 down
+Key with keycode 11 down
+played audio (once)
+Key with keycode 19 down
+Key with keycode 1 down
+played audio (once)
+played audio (once)
+Key with keycode 4 down
+Key with keycode 4 up
+Key with keycode 1 up
+Key with keycode 4 down
+played audio (once)
+Key with keycode 4 up
+Key with keycode 75 up
+Key with keycode 4 down
+Key with keycode 4 up
+Key with keycode 11 up
+Key with keycode 19 up
+Key with keycode 157 down
+Key with keycode 67 up
+Key with keycode 85 up
 Key with keycode 216 up
+Key with keycode 215 up
+Key with keycode 75 up
+Key with keycode 75 down
+played audio (once)
+Key with keycode 67 down
+played audio (once)
+Key with keycode 215 down
+played audio (once)
+played audio (once)
 Key with keycode 216 down
+played audio (once)
+Key with keycode 19 down
+Key with keycode 11 down
+Key with keycode 85 down
+played audio (once)
+played audio (once)
+played audio (once)
+played audio (once)
+played audio (once)
+played audio (once)
+played audio (once)
+Key with keycode 4 down
+played audio (once)
+Key with keycode 85 up
+played audio (once)
+Key with keycode 67 up
+Key with keycode 19 up
+played audio (once)
+Key with keycode 4 up
+Key with keycode 67 down
+played audio (once)
 Key with keycode 84 down
 played audio (once)
+Key with keycode 23 down
+Key with keycode 67 up
+played audio (once)
+played audio (once)
+played audio (once)
+played audio (once)
+played audio (once)
+Key with keycode 23 up
+Key with keycode 11 up
+played audio (once)
 Key with keycode 11 down
 played audio (once)
-Key with keycode 216 up
-Key with keycode 11 up
+played audio (once)
 Key with keycode 84 up
-Key with keycode 11 down
 played audio (once)
-Key with keycode 216 down
-Key with keycode 11 up
-Key with keycode 83 up
-Key with keycode 11 down
+played audio (once)
+Key with keycode 82 down
+Key with keycode 19 down
+played audio (once)
+played audio (once)
+Key with keycode 82 up
+played audio (once)
 played audio (once)
 Key with keycode 85 down
-Key with keycode 216 up
-Key with keycode 11 up
-Key with keycode 83 down
-Key with keycode 11 down
+Key with keycode 19 up
+Key with keycode 67 down
+played audio (once)
+played audio (once)
 played audio (once)
 Key with keycode 85 up
-Key with keycode 216 down
+played audio (once)
+played audio (once)
+played audio (once)
+Key with keycode 23 down
+played audio (once)
+played audio (once)
+played audio (once)
+Key with keycode 75 up
 Key with keycode 11 up
+Key with keycode 23 up
+Key with keycode 67 up
 Key with keycode 216 up
+Key with keycode 215 up
+Key with keycode 75 down
+played audio (once)
 Key with keycode 11 down
 played audio (once)
-Key with keycode 216 down
+played audio (once)
+played audio (once)
+played audio (once)
+played audio (once)
 Key with keycode 11 up
-Key with keycode 83 up
-Key with keycode 216 up
+Key with keycode 75 up
+Key with keycode 1 down
+Key with keycode 82 down
+Key with keycode 82 up
+Key with keycode 1 up
 Key with keycode 11 down
+played audio (once)
+played audio (once)
+played audio (once)
+Key with keycode 11 up
+Key with keycode 11 down
+played audio (once)
+played audio (once)
+Key with keycode 75 down
+played audio (once)
+played audio (once)
+played audio (once)
+played audio (once)
+played audio (once)
+played audio (once)
+Key with keycode 1 down
+Key with keycode 23 down
+played audio (once)
+played audio (once)
+played audio (once)
+Key with keycode 215 down
+played audio (once)
+Key with keycode 1 up
+played audio (once)
+Key with keycode 23 up
+played audio (once)
+played audio (once)
+played audio (once)
+played audio (once)
 Key with keycode 216 down
 played audio (once)
-Key with keycode 216 up
-Key with keycode 11 up
-Key with keycode 216 down
-Key with keycode 11 down
+played audio (once)
+played audio (once)
+Key with keycode 85 down
+played audio (once)
+played audio (once)
+Key with keycode 19 down
+Key with keycode 85 up
+played audio (once)
+played audio (once)
+Key with keycode 82 down
+played audio (once)
+Key with keycode 82 up
+played audio (once)
+played audio (once)
+Key with keycode 19 up
+played audio (once)
+played audio (once)
+Key with keycode 82 down
+played audio (once)
+played audio (once)
+Key with keycode 82 up
+played audio (once)
+played audio (once)
+played audio (once)
+Key with keycode 82 down
+played audio (once)
+played audio (once)
+Key with keycode 19 down
+played audio (once)
+Key with keycode 82 up
+played audio (once)
+Key with keycode 19 up
+played audio (once)
+played audio (once)
+played audio (once)
+played audio (once)
+played audio (once)
 Key with keycode 84 down
 played audio (once)
 played audio (once)
-Key with keycode 216 up
-Key with keycode 11 up
 Key with keycode 84 up
-Key with keycode 216 down
-Key with keycode 11 down
+Key with keycode 1 down
 played audio (once)
-Key with keycode 216 up
-Key with keycode 11 up
-Key with keycode 216 down
-Key with keycode 11 down
+Key with keycode 19 down
+played audio (once)
+played audio (once)
+Key with keycode 82 down
+Key with keycode 82 up
+played audio (once)
+Key with keycode 1 up
+Key with keycode 19 up
+played audio (once)
+Key with keycode 19 down
+played audio (once)
+played audio (once)
+played audio (once)
+Key with keycode 4 down
+played audio (once)
+Key with keycode 1 down
+played audio (once)
+Key with keycode 4 up
+played audio (once)
+Key with keycode 67 down
+played audio (once)
 Key with keycode 85 down
 played audio (once)
-Key with keycode 82 down
-Key with keycode 11 up
 Key with keycode 85 up
-Key with keycode 11 down
-played audio (once)
-Key with keycode 82 up
-Key with keycode 84 down
-Key with keycode 11 up
-Key with keycode 84 up
-Key with keycode 11 down
-played audio (once)
-Key with keycode 11 up
-Key with keycode 82 down
-Key with keycode 216 up
-Key with keycode 216 down
-Key with keycode 11 down
+Key with keycode 67 up
 played audio (once)
 played audio (once)
+Key with keycode 19 up
 played audio (once)
-Key with keycode 216 up
-Key with keycode 8 down
-Key with keycode 84 down
-Key with keycode 82 up
-Key with keycode 216 down
-Key with keycode 11 up
-Key with keycode 8 up
-Key with keycode 84 up
-Key with keycode 216 up
-Key with keycode 8 down
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 down
-Key with keycode 11 up
-Key with keycode 8 up
-Key with keycode 82 down
-Key with keycode 85 down
-Key with keycode 216 up
-Key with keycode 85 up
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 down
-Key with keycode 8 down
-Key with keycode 8 up
-Key with keycode 82 up
-Key with keycode 11 up
-Key with keycode 216 up
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 down
-Key with keycode 11 up
-Key with keycode 216 up
-Key with keycode 216 down
-Key with keycode 11 down
-played audio (once)
-Key with keycode 82 down
-Key with keycode 216 up
-Key with keycode 11 up
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 down
-played audio (once)
-Key with keycode 82 up
-Key with keycode 11 up
-Key with keycode 11 down
-Key with keycode 216 up
-played audio (once)
-Key with keycode 82 down
-Key with keycode 11 up
-Key with keycode 85 down
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 down
-Key with keycode 11 up
-Key with keycode 82 up
-Key with keycode 85 up
-Key with keycode 11 down
-played audio (once)
-Key with keycode 84 down
-Key with keycode 216 up
-Key with keycode 11 up
-Key with keycode 84 up
-Key with keycode 216 down
-Key with keycode 11 down
-played audio (once)
-Key with keycode 82 down
+Key with keycode 1 up
 played audio (once)
 played audio (once)
-Key with keycode 11 up
-Key with keycode 11 down
-played audio (once)
-Key with keycode 82 up
-Key with keycode 11 up
-Key with keycode 216 up
-Key with keycode 216 down
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 up
-Key with keycode 11 up
-Key with keycode 216 down
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 up
-Key with keycode 11 up
-Key with keycode 82 down
-Key with keycode 216 down
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 up
-Key with keycode 216 down
-played audio (once)
-Key with keycode 11 up
-Key with keycode 216 up
-Key with keycode 11 down
-Key with keycode 216 down
-played audio (once)
-Key with keycode 82 up
-Key with keycode 83 down
-played audio (once)
-Key with keycode 11 up
-Key with keycode 216 up
-Key with keycode 83 up
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 down
-Key with keycode 11 up
-Key with keycode 216 up
-Key with keycode 11 down
-played audio (once)
-Key with keycode 83 down
-Key with keycode 11 up
-Key with keycode 216 down
-Key with keycode 11 down
-played audio (once)
-Key with keycode 83 up
-Key with keycode 216 up
-Key with keycode 11 up
-Key with keycode 83 down
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 down
-Key with keycode 11 up
-Key with keycode 83 up
-Key with keycode 216 up
-Key with keycode 11 down
-played audio (once)
-Key with keycode 83 down
-Key with keycode 216 down
-Key with keycode 11 up
-Key with keycode 83 up
-played audio (once)
-Key with keycode 216 up
-Key with keycode 216 down
-Key with keycode 85 down
-Key with keycode 82 down
-Key with keycode 85 up
-Key with keycode 216 up
-Key with keycode 82 up
-Key with keycode 11 down
-played audio (once)
-Key with keycode 84 down
-Key with keycode 84 up
-Key with keycode 83 down
-Key with keycode 11 up
-Key with keycode 216 down
-Key with keycode 11 down
-played audio (once)
-Key with keycode 83 up
-Key with keycode 216 up
-Key with keycode 11 up
-Key with keycode 216 down
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 up
-Key with keycode 11 up
-Key with keycode 216 down
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 up
-Key with keycode 84 down
-Key with keycode 11 up
-Key with keycode 216 down
-played audio (once)
-Key with keycode 84 up
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 up
-Key with keycode 216 down
-Key with keycode 11 up
-Key with keycode 216 up
-Key with keycode 11 down
-played audio (once)
-Key with keycode 11 up
-Key with keycode 82 down
-Key with keycode 85 down
-Key with keycode 82 up
-Key with keycode 11 down
-Key with keycode 216 down
-played audio (once)
-Key with keycode 85 up
-Key with keycode 216 up
-Key with keycode 11 up
-Key with keycode 216 down
-Key with keycode 11 down
-played audio (once)
-Key with keycode 84 down
-Key with keycode 216 up
-Key with keycode 11 up
-Key with keycode 216 down
-Key with keycode 84 up
-Key with keycode 11 down
-played audio (once)
-Key with keycode 84 down
-Key with keycode 216 up
-Key with keycode 11 up
-Key with keycode 84 up
-Key with keycode 216 down
-played audio (once)
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 up
-Key with keycode 216 down
-Key with keycode 11 up
-Key with keycode 85 down
-Key with keycode 216 up
-Key with keycode 11 down
-played audio (once)
-Key with keycode 82 down
-Key with keycode 85 up
-Key with keycode 11 up
-Key with keycode 82 up
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 down
-Key with keycode 216 up
-Key with keycode 11 up
-Key with keycode 216 down
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 up
-Key with keycode 11 up
-Key with keycode 216 down
-Key with keycode 216 up
-Key with keycode 85 down
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 down
-played audio (once)
-Key with keycode 85 up
-Key with keycode 11 up
-Key with keycode 216 up
-Key with keycode 216 down
-Key with keycode 11 down
-played audio (once)
-Key with keycode 11 up
-Key with keycode 216 up
-Key with keycode 11 down
-played audio (once)
-Key with keycode 11 up
-Key with keycode 216 down
-Key with keycode 216 up
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 down
-Key with keycode 11 up
-Key with keycode 216 up
-Key with keycode 11 down
-Key with keycode 85 down
-played audio (once)
-Key with keycode 216 down
-Key with keycode 11 up
-Key with keycode 11 down
-Key with keycode 85 up
-played audio (once)
-Key with keycode 216 up
-Key with keycode 83 down
-played audio (once)
-Key with keycode 216 down
-played audio (once)
-played audio (once)
-Key with keycode 216 up
-Key with keycode 11 up
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 down
-Key with keycode 11 up
-Key with keycode 216 up
-Key with keycode 83 up
-Key with keycode 11 down
-played audio (once)
-Key with keycode 83 down
-Key with keycode 216 down
-Key with keycode 83 up
-Key with keycode 11 up
-Key with keycode 216 up
-Key with keycode 11 down
+Key with keycode 23 down
 Key with keycode 84 down
 played audio (once)
-Key with keycode 11 up
+played audio (once)
+played audio (once)
+Key with keycode 4 down
+Key with keycode 23 up
+played audio (once)
 Key with keycode 84 up
-Key with keycode 11 down
 played audio (once)
-Key with keycode 216 down
-Key with keycode 11 up
-Key with keycode 216 up
-Key with keycode 11 down
 played audio (once)
-Key with keycode 216 down
+Key with keycode 19 down
 played audio (once)
-Key with keycode 11 up
-Key with keycode 216 up
-Key with keycode 11 down
+Key with keycode 4 up
+Key with keycode 85 down
+played audio (once)
+Key with keycode 67 down
+Key with keycode 1 down
+played audio (once)
+played audio (once)
+Key with keycode 19 up
+Key with keycode 85 up
+Key with keycode 67 up
+Key with keycode 1 up
+played audio (once)
+Key with keycode 23 down
+Key with keycode 67 down
 Key with keycode 84 down
 played audio (once)
-Key with keycode 216 down
+Key with keycode 4 down
+Key with keycode 23 up
 played audio (once)
-Key with keycode 216 up
+played audio (once)
+played audio (once)
 Key with keycode 84 up
-Key with keycode 11 up
-Key with keycode 11 down
-Key with keycode 83 down
 played audio (once)
-Key with keycode 11 up
+Key with keycode 67 up
+Key with keycode 19 down
+played audio (once)
+Key with keycode 4 up
+Key with keycode 67 down
+Key with keycode 85 down
+played audio (once)
+played audio (once)
+played audio (once)
+played audio (once)
+played audio (once)
+played audio (once)
+played audio (once)
+played audio (once)
+played audio (once)
+Key with keycode 85 up
+Key with keycode 1 down
+Key with keycode 82 down
+played audio (once)
+played audio (once)
+played audio (once)
+played audio (once)
+Key with keycode 82 up
+played audio (once)
+Key with keycode 67 up
+Key with keycode 1 up
+played audio (once)
+played audio (once)
+played audio (once)
+played audio (once)
+Key with keycode 67 down
+Key with keycode 85 down
+played audio (once)
+played audio (once)
+played audio (once)
+played audio (once)
+played audio (once)
+played audio (once)
+played audio (once)
+Key with keycode 85 up
+Key with keycode 67 up
+played audio (once)
+played audio (once)
+Key with keycode 67 down
+played audio (once)
+Key with keycode 82 down
+Key with keycode 4 down
+played audio (once)
+played audio (once)
+Key with keycode 19 up
+Key with keycode 82 up
+Key with keycode 67 up
+played audio (once)
+played audio (once)
+played audio (once)
+played audio (once)
+Key with keycode 4 up
+Key with keycode 1 down
+played audio (once)
+Key with keycode 82 down
+played audio (once)
+played audio (once)
+played audio (once)
+played audio (once)
+played audio (once)
+played audio (once)
+played audio (once)
+played audio (once)
+played audio (once)
+played audio (once)
+played audio (once)
+Key with keycode 19 down
+Key with keycode 1 up
+Key with keycode 4 down
+played audio (once)
+Key with keycode 82 up
+played audio (once)
+Key with keycode 19 up
+played audio (once)
+played audio (once)
+played audio (once)
+played audio (once)
+played audio (once)
+Key with keycode 12 down
+played audio (once)
+played audio (once)
+played audio (once)
+played audio (once)
+played audio (once)
+Key with keycode 4 up
 Key with keycode 84 down
-Key with keycode 216 down
-Key with keycode 11 down
-played audio (once)
-Key with keycode 83 up
-Key with keycode 216 up
-Key with keycode 11 up
-Key with keycode 216 down
-Key with keycode 11 down
 played audio (once)
 played audio (once)
-Key with keycode 216 up
 Key with keycode 84 up
-Key with keycode 11 up
-Key with keycode 216 down
 played audio (once)
-Key with keycode 82 down
-Key with keycode 216 up
-Key with keycode 11 down
 played audio (once)
-Key with keycode 216 down
-Key with keycode 82 up
-Key with keycode 216 up
-Key with keycode 11 up
-Key with keycode 216 down
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 up
 Key with keycode 84 down
-Key with keycode 11 up
+played audio (once)
+played audio (once)
+Key with keycode 19 down
+played audio (once)
+played audio (once)
 Key with keycode 84 up
-Key with keycode 216 down
-Key with keycode 11 down
+Key with keycode 4 down
 played audio (once)
-Key with keycode 82 down
-Key with keycode 11 up
+Key with keycode 84 down
+Key with keycode 12 up
 Key with keycode 216 up
-Key with keycode 11 down
+Key with keycode 215 up
 played audio (once)
-Key with keycode 216 down
-Key with keycode 11 up
-Key with keycode 216 up
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 down
-Key with keycode 11 up
-played audio (once)
-Key with keycode 11 down
-Key with keycode 216 up
-played audio (once)
-Key with keycode 82 up
-Key with keycode 216 down
-Key with keycode 11 up
-Key with keycode 216 up
-Key with keycode 11 down
-played audio (once)
-Key with keycode 83 down
-Key with keycode 11 up
-Key with keycode 11 down
 played audio (once)
 Key with keycode 11 up
-Key with keycode 11 down
+Key with keycode 4 up
+Key with keycode 84 up
+Key with keycode 84 down
+Key with keycode 84 up
+Key with keycode 19 up
+Key with keycode 215 down
 played audio (once)
-Key with keycode 11 up
-Key with keycode 216 down
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 up
-Key with keycode 11 up
-Key with keycode 11 down
-played audio (once)
-Key with keycode 11 up
-Key with keycode 216 down
-played audio (once)
-Key with keycode 11 down
-Key with keycode 216 up
-played audio (once)
-Key with keycode 83 up
-Key with keycode 216 down
-Key with keycode 11 up
-Key with keycode 11 down
-Key with keycode 216 up
-played audio (once)
-Key with keycode 216 down
-Key with keycode 11 up
-Key with keycode 82 down
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 up
-Key with keycode 216 down
-Key with keycode 11 up
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 up
-Key with keycode 11 up
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 down
-Key with keycode 11 up
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 up
-Key with keycode 216 down
-played audio (once)
-Key with keycode 11 up
-Key with keycode 216 up
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 down
-Key with keycode 11 up
-Key with keycode 216 up
-Key with keycode 11 down
-played audio (once)
-Key with keycode 11 up
-Key with keycode 216 down
-Key with keycode 83 down
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 up
-Key with keycode 82 up
-Key with keycode 216 down
-Key with keycode 11 up
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 up
-Key with keycode 216 down
-Key with keycode 83 up
-Key with keycode 11 up
-Key with keycode 11 down
-played audio (once)
-Key with keycode 82 down
-Key with keycode 216 up
-Key with keycode 216 down
-Key with keycode 11 up
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 up
-Key with keycode 11 up
-Key with keycode 216 down
-played audio (once)
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 up
-Key with keycode 11 up
-Key with keycode 11 down
-Key with keycode 216 down
-played audio (once)
-Key with keycode 83 down
-Key with keycode 216 up
-Key with keycode 11 up
-Key with keycode 82 up
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 down
-Key with keycode 11 up
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 up
-Key with keycode 216 down
-Key with keycode 11 up
-Key with keycode 11 down
-Key with keycode 83 up
-played audio (once)
-Key with keycode 216 up
-Key with keycode 11 up
-Key with keycode 216 down
-Key with keycode 11 down
-played audio (once)
-Key with keycode 82 down
-Key with keycode 216 up
-Key with keycode 11 up
-Key with keycode 216 down
-Key with keycode 11 down
-played audio (once)
-played audio (once)
-Key with keycode 216 up
-Key with keycode 82 up
-Key with keycode 83 down
-Key with keycode 11 up
-Key with keycode 216 down
-Key with keycode 11 down
-played audio (once)
-Key with keycode 83 up
-Key with keycode 11 up
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 up
-Key with keycode 11 up
-Key with keycode 216 down
-Key with keycode 11 down
-played audio (once)
-Key with keycode 82 down
-Key with keycode 216 up
-played audio (once)
-Key with keycode 82 up
-Key with keycode 216 down
-Key with keycode 11 up
-Key with keycode 216 up
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 down
-Key with keycode 216 up
-Key with keycode 11 up
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 down
-played audio (once)
-Key with keycode 11 up
-Key with keycode 216 up
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 down
-Key with keycode 11 up
-Key with keycode 216 up
-Key with keycode 11 down
-played audio (once)
-Key with keycode 83 down
-Key with keycode 11 up
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 down
-Key with keycode 83 up
-Key with keycode 11 up
-Key with keycode 216 up
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 down
-Key with keycode 82 down
-Key with keycode 216 up
-Key with keycode 11 up
-Key with keycode 216 down
-Key with keycode 11 down
-played audio (once)
-Key with keycode 83 down
-Key with keycode 216 up
-Key with keycode 11 up
-Key with keycode 11 down
-played audio (once)
-Key with keycode 85 down
-Key with keycode 82 up
-Key with keycode 11 up
-Key with keycode 83 up
-Key with keycode 216 down
-played audio (once)
-Key with keycode 82 down
-Key with keycode 85 up
-Key with keycode 11 down
-Key with keycode 82 up
-played audio (once)
-Key with keycode 216 up
-Key with keycode 11 up
-Key with keycode 11 down
-Key with keycode 83 down
-played audio (once)
-Key with keycode 85 down
-Key with keycode 11 up
-Key with keycode 216 down
-Key with keycode 85 up
-Key with keycode 83 up
-Key with keycode 216 up
-Key with keycode 11 down
-played audio (once)
+Key with keycode 77 down
 Key with keycode 83 down
 Key with keycode 85 down
-Key with keycode 11 up
 Key with keycode 85 up
-Key with keycode 216 down
-Key with keycode 83 up
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 up
-Key with keycode 216 down
-Key with keycode 11 up
-Key with keycode 216 up
-Key with keycode 83 down
-Key with keycode 216 down
-played audio (once)
-Key with keycode 11 down
-played audio (once)
-Key with keycode 83 up
-Key with keycode 216 up
-Key with keycode 11 up
-Key with keycode 83 down
-Key with keycode 216 down
-Key with keycode 11 down
-played audio (once)
-Key with keycode 82 down
-Key with keycode 216 up
-Key with keycode 11 up
-Key with keycode 216 down
-Key with keycode 11 down
-played audio (once)
-Key with keycode 82 up
-Key with keycode 83 up
-Key with keycode 11 up
-Key with keycode 216 up
-Key with keycode 82 down
-Key with keycode 11 down
-played audio (once)
-Key with keycode 85 down
-Key with keycode 11 up
-Key with keycode 82 up
-Key with keycode 216 down
-Key with keycode 11 down
-played audio (once)
-Key with keycode 82 down
-Key with keycode 216 up
-Key with keycode 82 up
-Key with keycode 11 up
-Key with keycode 216 down
-Key with keycode 85 up
-Key with keycode 11 down
-played audio (once)
-played audio (once)
-Key with keycode 216 up
-Key with keycode 11 up
-Key with keycode 83 down
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 down
-Key with keycode 11 up
-Key with keycode 216 up
-Key with keycode 83 up
-Key with keycode 11 down
-played audio (once)
-Key with keycode 82 down
-Key with keycode 85 down
-Key with keycode 83 down
-Key with keycode 11 up
-Key with keycode 216 down
-Key with keycode 11 down
-played audio (once)
-Key with keycode 82 up
-Key with keycode 82 down
-Key with keycode 216 up
-Key with keycode 85 up
-played audio (once)
-Key with keycode 82 up
-Key with keycode 83 up
-Key with keycode 11 up
 Key with keycode 8 down
 played audio (bgm)
+Key with keycode 12 down
+Key with keycode 85 down
 Key with keycode 11 down
+Key with keycode 83 up
+Key with keycode 77 up
 Key with keycode 11 up
+Key with keycode 12 up
+Key with keycode 85 up
+Key with keycode 63 down
+Key with keycode 75 up
+Key with keycode 63 up
 Key with keycode 8 up
-Key with keycode 84 down
-Key with keycode 84 up
-Key with keycode 216 down
-Key with keycode 84 down
-Key with keycode 216 up
-Key with keycode 84 up
-Key with keycode 84 down
-Key with keycode 84 up
-Key with keycode 84 down
-Key with keycode 216 down
-Key with keycode 216 up
-Key with keycode 216 down
-Key with keycode 216 up
-Key with keycode 216 down
-Key with keycode 216 up
-Key with keycode 84 up
-Key with keycode 83 down
-Key with keycode 84 down
-Key with keycode 84 up
-Key with keycode 83 up
-stop audio (bgm)
-played audio (once)
-Key with keycode 216 down
-played audio (once)
-Key with keycode 216 up
-played audio (once)
-Key with keycode 216 down
-Key with keycode 216 up
-played audio (once)
-Key with keycode 216 down
-played audio (once)
-Key with keycode 216 up
-Key with keycode 216 down
-Key with keycode 216 up
-Key with keycode 216 down
-Key with keycode 216 up
-Key with keycode 216 down
-Key with keycode 216 up
-Key with keycode 216 down
-played audio (once)
-Key with keycode 216 up
-Key with keycode 216 down
-Key with keycode 216 up
-Key with keycode 216 down
-Key with keycode 216 up
-Key with keycode 216 down
-Key with keycode 216 up
-Key with keycode 216 down
-Key with keycode 216 up
-Key with keycode 216 down
-Key with keycode 216 up
-Key with keycode 216 down
-played audio (once)
-Key with keycode 216 up
-played audio (once)
-Key with keycode 216 down
-Key with keycode 216 up
-Key with keycode 216 down
-Key with keycode 216 up
-Key with keycode 216 down
-Key with keycode 216 up
-Key with keycode 216 down
-Key with keycode 216 up
-Key with keycode 216 down
-played audio (once)
-Key with keycode 216 up
-Key with keycode 216 down
-Key with keycode 216 up
-Key with keycode 216 down
-Key with keycode 216 up
-Key with keycode 216 down
-Key with keycode 216 up
-Key with keycode 216 down
-Key with keycode 11 down
-Key with keycode 216 up
-played audio (once)
-Key with keycode 11 up
-Key with keycode 216 down
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 up
-Key with keycode 11 up
-Key with keycode 216 down
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 up
-Key with keycode 11 up
-Key with keycode 216 down
-played audio (once)
-Key with keycode 11 down
-Key with keycode 216 up
-played audio (once)
-Key with keycode 11 up
-Key with keycode 216 down
-Key with keycode 11 down
-Key with keycode 216 up
-played audio (once)
-Key with keycode 11 up
-Key with keycode 216 down
-played audio (once)
-Key with keycode 11 down
-Key with keycode 216 up
-played audio (once)
-Key with keycode 11 up
-Key with keycode 216 down
-Key with keycode 11 down
-Key with keycode 216 up
-played audio (once)
-Key with keycode 83 down
-Key with keycode 11 up
-Key with keycode 216 down
-Key with keycode 11 down
-Key with keycode 83 up
-played audio (once)
-Key with keycode 216 up
-Key with keycode 11 up
-Key with keycode 216 down
-Key with keycode 11 down
-Key with keycode 216 up
-played audio (once)
-played audio (once)
-Key with keycode 11 up
-Key with keycode 216 down
-played audio (once)
-Key with keycode 11 down
-Key with keycode 216 up
-played audio (once)
-Key with keycode 216 down
-played audio (once)
-Key with keycode 11 up
-Key with keycode 11 down
-Key with keycode 216 up
-played audio (once)
-Key with keycode 216 down
-Key with keycode 11 up
-Key with keycode 216 up
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 down
-Key with keycode 216 up
-Key with keycode 11 up
-Key with keycode 216 down
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 up
-Key with keycode 11 up
-Key with keycode 216 down
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 up
-Key with keycode 11 up
-Key with keycode 216 down
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 up
-Key with keycode 216 down
-Key with keycode 11 up
-Key with keycode 216 up
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 down
-played audio (once)
-Key with keycode 216 up
-Key with keycode 11 up
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 down
-Key with keycode 216 up
-Key with keycode 11 up
-Key with keycode 216 down
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 up
-Key with keycode 11 up
-Key with keycode 216 down
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 up
-Key with keycode 216 down
-Key with keycode 11 up
-Key with keycode 216 up
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 down
-Key with keycode 216 up
-Key with keycode 11 up
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 down
-Key with keycode 216 up
-Key with keycode 11 up
-Key with keycode 11 down
-Key with keycode 216 down
-played audio (once)
-played audio (once)
-played audio (once)
-Key with keycode 216 up
-Key with keycode 11 up
-Key with keycode 216 down
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 up
-Key with keycode 11 up
-Key with keycode 216 down
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 up
-Key with keycode 216 down
-Key with keycode 11 up
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 up
-Key with keycode 216 down
-Key with keycode 11 up
-Key with keycode 216 up
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 down
-Key with keycode 82 down
-played audio (once)
-Key with keycode 11 up
-Key with keycode 216 up
-Key with keycode 82 up
-Key with keycode 11 down
-Key with keycode 216 down
-played audio (once)
-played audio (once)
-Key with keycode 216 up
-Key with keycode 11 up
-Key with keycode 216 down
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 up
-Key with keycode 11 up
-Key with keycode 216 down
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 up
-Key with keycode 82 down
-played audio (once)
-Key with keycode 11 up
-Key with keycode 216 down
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 up
-Key with keycode 11 up
-Key with keycode 11 down
-Key with keycode 216 down
-Key with keycode 82 up
-played audio (once)
-played audio (once)
-Key with keycode 216 up
-Key with keycode 216 down
-played audio (once)
-played audio (once)
-Key with keycode 11 up
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 up
-Key with keycode 216 down
-played audio (once)
-played audio (once)
-Key with keycode 216 up
-Key with keycode 11 up
-Key with keycode 216 down
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 up
-Key with keycode 216 down
-Key with keycode 11 up
-Key with keycode 216 up
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 down
-Key with keycode 11 up
-Key with keycode 216 up
-Key with keycode 11 down
-played audio (once)
-Key with keycode 82 down
-Key with keycode 216 down
-Key with keycode 11 up
-Key with keycode 82 up
-played audio (once)
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 up
-Key with keycode 216 down
-Key with keycode 11 up
-Key with keycode 216 up
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 down
-Key with keycode 216 up
-Key with keycode 11 up
-Key with keycode 216 down
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 up
-Key with keycode 11 up
-Key with keycode 82 down
-Key with keycode 11 down
-Key with keycode 82 up
-played audio (once)
-Key with keycode 11 up
-Key with keycode 216 down
-Key with keycode 216 up
-Key with keycode 11 down
-Key with keycode 216 down
-played audio (once)
-Key with keycode 216 up
-Key with keycode 11 up
-Key with keycode 216 down
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 up
-Key with keycode 11 up
-Key with keycode 216 down
-Key with keycode 11 down
-played audio (once)
-played audio (once)
-Key with keycode 216 up
-played audio (once)
-Key with keycode 11 up
-Key with keycode 216 down
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 up
-played audio (once)
-Key with keycode 11 up
-Key with keycode 216 down
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 up
-Key with keycode 11 up
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 down
-Key with keycode 216 up
-Key with keycode 11 up
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 down
-Key with keycode 216 up
-Key with keycode 11 up
-Key with keycode 11 down
-Key with keycode 216 down
-played audio (once)
-Key with keycode 11 up
-played audio (once)
-Key with keycode 216 up
-Key with keycode 216 down
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 up
-Key with keycode 82 down
-played audio (once)
-Key with keycode 216 down
-played audio (once)
-Key with keycode 82 up
-Key with keycode 216 up
-Key with keycode 11 up
-Key with keycode 216 down
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 up
-Key with keycode 11 up
-Key with keycode 216 down
-Key with keycode 11 down
-Key with keycode 216 up
-played audio (once)
-Key with keycode 216 down
-Key with keycode 11 up
-Key with keycode 216 up
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 down
-Key with keycode 82 down
-played audio (once)
-played audio (once)
-Key with keycode 216 up
-played audio (once)
-Key with keycode 216 down
-Key with keycode 82 up
-Key with keycode 216 up
-Key with keycode 11 up
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 down
-Key with keycode 216 up
-played audio (once)
-Key with keycode 11 up
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 down
-Key with keycode 11 up
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 up
-Key with keycode 83 down
-Key with keycode 216 down
-Key with keycode 11 up
-Key with keycode 216 up
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 down
-Key with keycode 216 up
-Key with keycode 11 up
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 down
-played audio (once)
-Key with keycode 216 up
-Key with keycode 11 up
-Key with keycode 216 down
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 up
-Key with keycode 216 down
-Key with keycode 216 up
-Key with keycode 11 up
-Key with keycode 11 down
-played audio (once)
-Key with keycode 84 down
-played audio (once)
-Key with keycode 216 down
-Key with keycode 216 up
-Key with keycode 11 up
-Key with keycode 84 up
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 down
-Key with keycode 11 up
-Key with keycode 216 up
-Key with keycode 84 down
-Key with keycode 11 down
-played audio (once)
-Key with keycode 83 up
-Key with keycode 216 down
-played audio (once)
-played audio (once)
-Key with keycode 84 up
-Key with keycode 11 up
-Key with keycode 216 up
-Key with keycode 216 down
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 up
-Key with keycode 83 down
-Key with keycode 11 up
-played audio (once)
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 down
-Key with keycode 216 up
-Key with keycode 83 up
-Key with keycode 11 up
-Key with keycode 216 down
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 up
-Key with keycode 82 down
-Key with keycode 11 up
-played audio (once)
-Key with keycode 216 down
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 up
-Key with keycode 11 up
-Key with keycode 82 up
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 down
-played audio (once)
-Key with keycode 216 up
-played audio (once)
-Key with keycode 11 up
-Key with keycode 216 down
-played audio (once)
-Key with keycode 11 down
-Key with keycode 216 up
-Key with keycode 84 down
-played audio (once)
-Key with keycode 11 up
-Key with keycode 216 down
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 up
-Key with keycode 84 up
-Key with keycode 216 down
-Key with keycode 11 up
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 up
-Key with keycode 84 down
-Key with keycode 83 down
-Key with keycode 216 down
-played audio (once)
-Key with keycode 83 up
-Key with keycode 216 up
-Key with keycode 84 up
-Key with keycode 216 down
-played audio (once)
-played audio (once)
-Key with keycode 11 up
-Key with keycode 216 up
-Key with keycode 84 down
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 down
-played audio (once)
-Key with keycode 216 up
-Key with keycode 11 up
-Key with keycode 84 up
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 down
-Key with keycode 216 up
-played audio (once)
-Key with keycode 11 up
-Key with keycode 82 down
-Key with keycode 11 down
-played audio (once)
-Key with keycode 11 up
-Key with keycode 85 down
-Key with keycode 82 up
-Key with keycode 11 down
-Key with keycode 216 down
-played audio (once)
-Key with keycode 85 up
-Key with keycode 11 up
-Key with keycode 216 up
-Key with keycode 11 down
-Key with keycode 85 down
-played audio (once)
-Key with keycode 216 down
-Key with keycode 11 up
-Key with keycode 85 up
-played audio (once)
-Key with keycode 216 up
-Key with keycode 11 down
-played audio (once)
-Key with keycode 11 up
-Key with keycode 216 down
-played audio (once)
-played audio (once)
-Key with keycode 11 down
-Key with keycode 84 down
-played audio (once)
-Key with keycode 216 up
-Key with keycode 11 up
-Key with keycode 216 down
-Key with keycode 11 down
-played audio (once)
-played audio (once)
-Key with keycode 83 down
-Key with keycode 216 up
-Key with keycode 84 up
-Key with keycode 83 up
-Key with keycode 11 up
-Key with keycode 216 down
-Key with keycode 11 down
-played audio (once)
-Key with keycode 82 down
-Key with keycode 11 up
-Key with keycode 11 down
-played audio (once)
-Key with keycode 82 up
-Key with keycode 216 up
-Key with keycode 216 down
-Key with keycode 11 up
-Key with keycode 82 down
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 up
-Key with keycode 216 down
-Key with keycode 82 up
-Key with keycode 11 up
-Key with keycode 82 down
-Key with keycode 11 down
-played audio (once)
-played audio (once)
-Key with keycode 11 up
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 up
-Key with keycode 82 up
-Key with keycode 82 down
-Key with keycode 11 up
-Key with keycode 216 down
-Key with keycode 82 up
-Key with keycode 216 up
-Key with keycode 11 down
-Key with keycode 82 down
-played audio (once)
-Key with keycode 85 down
-Key with keycode 11 up
-Key with keycode 82 up
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 down
-Key with keycode 85 up
-Key with keycode 216 up
-Key with keycode 11 up
-Key with keycode 216 down
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 up
-Key with keycode 11 up
-Key with keycode 216 down
-Key with keycode 11 down
-played audio (once)
-played audio (once)
-Key with keycode 216 up
-Key with keycode 11 up
-Key with keycode 216 down
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 up
-Key with keycode 216 down
-Key with keycode 11 up
-Key with keycode 84 down
-Key with keycode 216 up
-played audio (once)
-Key with keycode 84 up
-Key with keycode 11 down
-played audio (once)
-Key with keycode 83 down
-Key with keycode 216 down
-Key with keycode 11 up
-played audio (once)
-Key with keycode 83 up
-Key with keycode 11 down
-Key with keycode 216 up
-played audio (once)
-Key with keycode 216 down
-Key with keycode 11 up
-Key with keycode 216 up
-Key with keycode 83 down
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 down
-Key with keycode 83 up
-Key with keycode 216 up
-Key with keycode 11 up
-Key with keycode 216 down
-Key with keycode 11 down
-played audio (once)
-played audio (once)
-Key with keycode 11 up
-Key with keycode 82 down
-Key with keycode 216 up
-Key with keycode 11 down
-played audio (once)
-Key with keycode 82 up
-Key with keycode 11 up
-Key with keycode 216 down
-Key with keycode 11 down
-played audio (once)
-Key with keycode 82 down
-Key with keycode 216 up
-Key with keycode 11 up
-Key with keycode 216 down
-Key with keycode 82 up
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 up
-Key with keycode 82 down
-played audio (once)
-Key with keycode 11 up
-Key with keycode 82 up
-Key with keycode 216 down
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 up
-Key with keycode 11 up
-Key with keycode 216 down
-Key with keycode 11 down
-played audio (once)
-played audio (once)
-played audio (once)
-Key with keycode 216 up
-Key with keycode 11 up
-Key with keycode 216 down
-played audio (once)
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 up
-Key with keycode 11 up
-Key with keycode 84 down
-Key with keycode 11 down
-played audio (once)
-played audio (once)
-Key with keycode 84 up
-Key with keycode 11 up
-Key with keycode 216 down
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 up
-Key with keycode 11 up
-Key with keycode 82 down
-Key with keycode 11 down
-played audio (once)
-Key with keycode 85 down
-Key with keycode 83 down
-Key with keycode 11 up
-Key with keycode 82 up
-Key with keycode 85 up
-Key with keycode 216 down
-Key with keycode 11 down
-played audio (once)
-played audio (once)
-Key with keycode 216 up
-Key with keycode 11 up
-Key with keycode 216 down
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 up
-Key with keycode 11 up
-Key with keycode 83 up
-Key with keycode 216 down
-Key with keycode 11 down
-played audio (once)
-Key with keycode 84 down
-Key with keycode 84 up
-Key with keycode 216 up
-played audio (once)
-Key with keycode 82 down
-Key with keycode 216 down
-played audio (once)
-Key with keycode 11 up
-Key with keycode 11 down
-played audio (once)
-Key with keycode 11 up
-Key with keycode 11 down
-Key with keycode 216 up
-played audio (once)
-Key with keycode 216 down
-played audio (once)
-Key with keycode 11 up
-Key with keycode 216 up
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 down
-Key with keycode 11 up
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 up
-Key with keycode 82 up
-Key with keycode 11 up
-Key with keycode 216 down
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 up
-Key with keycode 11 up
-Key with keycode 216 down
-Key with keycode 11 down
-Key with keycode 84 down
-played audio (once)
-Key with keycode 216 up
-Key with keycode 84 up
-Key with keycode 216 down
-played audio (once)
-Key with keycode 216 up
-Key with keycode 11 up
-Key with keycode 11 down
-played audio (once)
-Key with keycode 82 down
-played audio (once)
-Key with keycode 11 up
-Key with keycode 11 down
-played audio (once)
-Key with keycode 83 down
-Key with keycode 82 up
-Key with keycode 216 down
-played audio (once)
-Key with keycode 11 up
-Key with keycode 216 up
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 down
-Key with keycode 83 up
-Key with keycode 11 up
-Key with keycode 216 up
-Key with keycode 216 down
-Key with keycode 11 down
-played audio (once)
-Key with keycode 11 up
-Key with keycode 216 up
-Key with keycode 82 down
-Key with keycode 216 down
-Key with keycode 11 down
-played audio (once)
-Key with keycode 82 up
-Key with keycode 216 up
-Key with keycode 11 up
-Key with keycode 82 down
-Key with keycode 11 down
-Key with keycode 216 down
-played audio (once)
-Key with keycode 216 up
-Key with keycode 84 down
-Key with keycode 82 up
-played audio (once)
-Key with keycode 11 up
-Key with keycode 11 down
-Key with keycode 216 down
-played audio (once)
-Key with keycode 84 up
-played audio (once)
-Key with keycode 11 up
-Key with keycode 82 down
-Key with keycode 11 down
-Key with keycode 216 up
-played audio (once)
-Key with keycode 216 down
-Key with keycode 82 up
-Key with keycode 11 up
-Key with keycode 216 up
-Key with keycode 216 down
 Key with keycode 11 down
-played audio (once)
-Key with keycode 216 up
-played audio (once)
-Key with keycode 11 up
-Key with keycode 216 down
-Key with keycode 11 down
-played audio (once)
-Key with keycode 82 down
-Key with keycode 216 up
-Key with keycode 82 up
-Key with keycode 84 down
-played audio (once)
-Key with keycode 11 up
-Key with keycode 11 down
-played audio (once)
-played audio (once)
-Key with keycode 84 up
-Key with keycode 216 down
-played audio (once)
-Key with keycode 11 up
-Key with keycode 216 up
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 down
-played audio (once)
-Key with keycode 11 up
-Key with keycode 216 up
-Key with keycode 11 down
-played audio (once)
-Key with keycode 11 up
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 down
-Key with keycode 82 down
-Key with keycode 11 up
-Key with keycode 216 up
-Key with keycode 85 down
-Key with keycode 11 down
-played audio (once)
-Key with keycode 82 up
-Key with keycode 85 up
-Key with keycode 216 down
-Key with keycode 11 up
-Key with keycode 82 down
-Key with keycode 216 up
-Key with keycode 11 down
-played audio (once)
-Key with keycode 11 up
-Key with keycode 82 up
-Key with keycode 85 down
-Key with keycode 11 down
-played audio (once)
-Key with keycode 83 down
-Key with keycode 85 up
-Key with keycode 11 up
-Key with keycode 216 down
-Key with keycode 83 up
-played audio (once)
-Key with keycode 11 down
-played audio (once)
-Key with keycode 84 down
-Key with keycode 216 up
-Key with keycode 11 up
-Key with keycode 216 down
-Key with keycode 84 up
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 up
-Key with keycode 216 down
-Key with keycode 11 up
-Key with keycode 216 up
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 down
-Key with keycode 216 up
-played audio (once)
-Key with keycode 11 up
-Key with keycode 216 down
-Key with keycode 11 down
-Key with keycode 216 up
-Key with keycode 82 down
-played audio (once)
-played audio (once)
-Key with keycode 11 up
-Key with keycode 82 up
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 down
-played audio (once)
-Key with keycode 216 up
-Key with keycode 83 down
-played audio (once)
-Key with keycode 11 up
-Key with keycode 216 down
-Key with keycode 11 down
-played audio (once)
-played audio (once)
-Key with keycode 83 up
-Key with keycode 216 up
-Key with keycode 11 up
-Key with keycode 83 down
-Key with keycode 11 down
-played audio (once)
-Key with keycode 216 down
-Key with keycode 216 up
-Key with keycode 83 up
-Key with keycode 11 up
-Key with keycode 216 down
-Key with keycode 11 down
-played audio (once)
-Key with keycode 82 down
+Key with keycode 12 down
 Key with keycode 11 up
-Key with keycode 216 up
-Key with keycode 11 down
-Key with keycode 82 up
-played audio (once)
+Key with keycode 12 up
 Key with keycode 216 down
-Key with keycode 82 down
-Key with keycode 11 up
-Key with keycode 216 up
+Key with keycode 218 down
+Key with keycode 218 up
 Key with keycode 11 down
-played audio (once)
-Key with keycode 216 down
 Key with keycode 11 up
-Key with keycode 82 up
-played audio (once)
 Key with keycode 216 up
+Key with keycode 215 up
+Key with keycode 75 down
 Key with keycode 8 down
-played audio (bgm)
+Key with keycode 84 down
+Key with keycode 84 up
+Key with keycode 215 down
+Key with keycode 83 down
+Key with keycode 215 up
+Key with keycode 83 up
+Key with keycode 215 down
+Key with keycode 83 down
+Key with keycode 216 down
+Key with keycode 75 up
+Key with keycode 157 down
+Key with keycode 83 up
+Key with keycode 6 down
+Key with keycode 11 down
+Key with keycode 6 up
+Key with keycode 84 down
+Key with keycode 84 up
+Key with keycode 84 down
 Key with keycode 8 up
+Key with keycode 84 up
+Key with keycode 11 up
+Key with keycode 11 down
+Key with keycode 8 down
+Key with keycode 84 down
+Key with keycode 84 up
+Key with keycode 82 down
+Key with keycode 8 up
+Key with keycode 84 down
+Key with keycode 83 down
+Key with keycode 84 up
+Key with keycode 11 up
+Key with keycode 11 down
 stop audio (bgm)
+played audio (once)
+played audio (once)
+played audio (once)
+played audio (once)
+Key with keycode 83 up
+Key with keycode 4 down
+played audio (once)
+Key with keycode 83 down
+Key with keycode 215 up
+Key with keycode 216 up
+Key with keycode 82 up
+Key with keycode 215 down
+Key with keycode 4 up
+Key with keycode 216 down
+played audio (once)
+Key with keycode 84 down
+played audio (once)
+Key with keycode 83 up
+Key with keycode 84 up
+played audio (once)
+Key with keycode 83 down
+played audio (once)
+Key with keycode 10 down
+played audio (once)
+played audio (once)
+played audio (once)
+Key with keycode 221 down
+Key with keycode 11 up
+played audio (once)
+played audio (once)
+played audio (once)
+played audio (once)
+played audio (once)
 played audio (once)
 Window close button clicked
 Game end
+stop audio (bgm)
 Start scene destroyed

@@ -12,9 +12,6 @@
 
 static ALLEGRO_BITMAP* img_background;
 
-static ALLEGRO_SAMPLE* bgm;
-static ALLEGRO_SAMPLE_ID bgm_id;
-
 static void init(void);
 static void draw(void);
 static void destroy(void);
@@ -22,8 +19,6 @@ static void on_key_down(int keycode);
 
 static void init(void) {
     img_background = load_bitmap_resized(".\\img\\gamewin-bg.jpg", SCREEN_W, SCREEN_H);
-//    bgm = load_audio(".\\img\\S31-Night Prowler.ogg");
-//    bgm_id = play_bgm(bgm, 1);
     game_log("gamewin scene initialized");
 }
 
@@ -34,7 +29,6 @@ static void draw(void) {
 }
 
 static void destroy(void) {
-    al_destroy_sample(bgm);
     al_destroy_bitmap(img_background);
     game_log("gameover scene destroyed");
 }

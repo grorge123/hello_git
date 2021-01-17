@@ -24,8 +24,6 @@
 // inside this scene. They should all have the 'static' prefix.
 
 static ALLEGRO_BITMAP* img_background;
-static ALLEGRO_SAMPLE* bgm;
-static ALLEGRO_SAMPLE_ID bgm_id;
 
 static ALLEGRO_BITMAP* img_single;
 static ALLEGRO_BITMAP* img_double;
@@ -45,8 +43,6 @@ static void init(void) {
     img_player1 = load_bitmap_resized(".\\img\\img_player1.png", BUTTON_W, BUTTON_H);
     img_player2 = load_bitmap_resized(".\\img\\img_player2.png", BUTTON_W, BUTTON_H);
     img_player3 = load_bitmap_resized(".\\img\\img_player3.png", BUTTON_W, BUTTON_H);
-//    bgm = load_audio(".\\img\\S31-Night Prowler.ogg");
-//    bgm_id = play_bgm(bgm, 1);
     game_log("setting scene initialized");
 }
 

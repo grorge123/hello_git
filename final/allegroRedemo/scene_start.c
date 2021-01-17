@@ -172,7 +172,7 @@ static void init(void) {
     for(int i = 0 ; i < 2 ; i++){
         plane[i].w = al_get_bitmap_width(plane[i].img);
         plane[i].h = al_get_bitmap_height(plane[i].img);
-        plane[i].hp = plane[i].max_hp = 300;
+        plane[i].hp = plane[i].max_hp = 600;
         plane[i].hidden = false;
     }
     skill_prepare = 0;
@@ -557,8 +557,12 @@ static void check_state(void){
             plane[i].y = SCREEN_H - plane[i].w / 2;
     }
     if(score >= 1000){
-        boss.hidden = false;
-        img_background = img_background2;
+        if(boss.hidden){
+            boss.hidden = false;
+            img_background = img_background2;
+            stop_bgm(bgm_id);
+            bgm_id = play_audio(bgm_boss, 1);
+        }
     }
     for(int i = 0 ; i < 2 ; i++){
         if(plane[i].hp <= 0){
@@ -567,9 +571,13 @@ static void check_state(void){
     }
     if(plane[0].hidden && plane[1].hidden){
         start_scene.init = false;
+        stop_bgm(bgm_id);
+        bgm_id = play_bgm(bgm_menu, 1);
         game_change_scene(&gameover_scene);
     }else if(boss.hp <= 0){
         start_scene.init = false;
+        stop_bgm(bgm_id);
+        bgm_id = play_bgm(bgm_menu, 1);
         game_change_scene(&gamewin_scene);
     }
 }
@@ -858,7 +866,6 @@ static void destroy(void) {
     al_destroy_bitmap(img_enemy[1]);
     al_destroy_bitmap(img_enemy[2]);
     al_destroy_bitmap(img_bullet);
-//    stop_bgm(bgm_id);
     game_log("Start scene destroyed");
 }
 
@@ -866,8 +873,11 @@ static void on_key_down(int keycode) {
     if (keycode == ALLEGRO_KEY_TAB)
         draw_gizmos = !draw_gizmos;
     if(keycode == ALLEGRO_KEY_BACKSPACE)
-        if(now_status == 0 || now_status == 1)
+        if(now_status == 0 || now_status == 1){
+            if(now_status == 1)stop_bgm(bgm_id);
+            else bgm_id = play_bgm((boss.hidden?bgm_start:bgm_boss), 1);
             now_status = !now_status;
+        }
 }
 
 

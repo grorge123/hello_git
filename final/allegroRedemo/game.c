@@ -39,6 +39,12 @@ bool key_state[ALLEGRO_KEY_MAX];
 bool *mouse_state;
 int mouse_x, mouse_y;
 
+ALLEGRO_SAMPLE* bgm_menu;
+ALLEGRO_SAMPLE* bgm_start;
+ALLEGRO_SAMPLE* bgm_boss;
+ALLEGRO_SAMPLE_ID bgm_id;
+
+
 /* Internal variables. */
 static ALLEGRO_DISPLAY* game_display;
 static ALLEGRO_EVENT_QUEUE* game_event_queue;
@@ -86,6 +92,7 @@ void game_create() {
     pthread_join(load_setting, NULL);
     pthread_join(load_gameover, NULL);
     pthread_join(load_gamewin, NULL);
+    bgm_id = play_bgm(bgm_menu, 1);
     game_change_scene(&menu_scene);
     game_log("Game initialized");
     // Draw the first frame.
@@ -95,6 +102,7 @@ void game_create() {
     // This call blocks until the game is finished.
     game_start_event_loop();
     game_log("Game end");
+    stop_bgm(bgm_id);
     if (active_scene.destroy)
         (*active_scene.destroy)();
     game_destroy();

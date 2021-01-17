@@ -27,8 +27,7 @@ static ALLEGRO_BITMAP* img_background;
 // Uncomment and fill in the code below.
 static ALLEGRO_BITMAP* img_settings;
 static ALLEGRO_BITMAP* img_settings2;
-static ALLEGRO_SAMPLE* bgm;
-static ALLEGRO_SAMPLE_ID bgm_id;
+
 
 static void init(void);
 static void draw(void);
@@ -48,9 +47,7 @@ static void init(void) {
     img_settings2 = al_load_bitmap(".\\img\\settings2.png");
     setting_button_x = SCREEN_W - 2 * al_get_bitmap_width(img_settings2);
     setting_button_y = 0 + al_get_bitmap_height(img_settings2);
-    // Can be moved to shared_init to decrease loading time.
-    bgm = load_audio(".\\img\\S31-Night Prowler.ogg");
-//    bgm_id = play_bgm(bgm, 1);
+    bgm_boss = load_audio(".\\img\\boss.ogg");
     game_log("Menu scene initialized");
 }
 
@@ -71,20 +68,21 @@ static void draw(void) {
 }
 
 static void destroy(void) {
-    al_destroy_sample(bgm);
     al_destroy_bitmap(img_background);
     // [HACKATHON 3-6]
     // TODO: Destroy the 2 settings images.
     // Uncomment and fill in the code below.
     al_destroy_bitmap(img_settings);
     al_destroy_bitmap(img_settings2);
-    stop_bgm(bgm_id);
     game_log("Menu scene destroyed");
 }
 
 static void on_key_down(int keycode) {
-    if (keycode == ALLEGRO_KEY_ENTER)
+    if (keycode == ALLEGRO_KEY_ENTER){
+        stop_bgm(bgm_id);
+        bgm_id = play_bgm(bgm_start, 1);
         game_change_scene(&start_scene);
+    }
 }
 
 // [HACKATHON 3-7]
