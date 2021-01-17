@@ -221,7 +221,7 @@
 	<allegro5/allegro_font.h>
 	<allegro5/allegro_acodec.h>
 
-1610849272 source:c:\users\tsao han wen\desktop\github\hello_git\final\allegroredemo\scene_start.c
+1610853346 source:c:\users\tsao han wen\desktop\github\hello_git\final\allegroredemo\scene_start.c
 	"game.h"
 	"scene_start.h"
 	"scene_menu.h"

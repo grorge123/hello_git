@@ -102,9 +102,9 @@ static void on_key_down(int keycode) {
     if(keycode == ALLEGRO_KEY_ENTER){
         if(choose == 0)player_double = false;
         if(choose == 1)player_double = true;
-        if(choose == 2)strcpy(plane_img, ".\\img\\img_player1.png");
-        if(choose == 3)strcpy(plane_img, ".\\img\\img_player2.png");
-        if(choose == 4)strcpy(plane_img, ".\\img\\img_player3.png");
+        if(choose == 2)strcpy(plane_img[0], ".\\img\\img_player1.png"),strcpy(plane_img[1], ".\\img\\img_player1.png");
+        if(choose == 3)strcpy(plane_img[0], ".\\img\\img_player2.png"),strcpy(plane_img[1], ".\\img\\img_player2.png");
+        if(choose == 4)strcpy(plane_img[0], ".\\img\\img_player3.png"),strcpy(plane_img[1], ".\\img\\img_player3.png");
 
     }
 }
