@@ -56,12 +56,12 @@ static MovableObject boss;
 static const float MAX_COOLDOWN = 0.2f;
 static double last_shoot_timestamp[2];
 static const float KNIFE_FINISH = 0.5;
-static const float KNIFE_COOLDOWN = 0.5;
+static const float KNIFE_COOLDOWN = 0.8;
 static float knife_v = (2 * ALLEGRO_PI) / (KNIFE_FINISH * 144);
 static float knife_ange[2] = {};
 static float knife_last[2] = {};
 static bool knife_hidden[2] = {1,1};
-static int skill_COOLDOWN = 5;
+static int skill_COOLDOWN = 3;
 static int skill_start = -10;
 static int skill_end = -10;
 static int skill_prepare = 0;
@@ -71,8 +71,14 @@ static MovableObject skill_bullets[skill_bullet_size];
 static double boss_invincible = 0;
 static int boss_bullets = 10;
 
-static ALLEGRO_SAMPLE* bgm;
-//static ALLEGRO_SAMPLE_ID bgm_id;
+static ALLEGRO_SAMPLE* voice_magic;
+static ALLEGRO_SAMPLE* voice_knife;
+static ALLEGRO_SAMPLE* voice_bomb;
+static ALLEGRO_SAMPLE* voice_bigbomb;
+static ALLEGRO_SAMPLE* voice_shot;
+static ALLEGRO_SAMPLE_ID magic_id;
+
+
 static bool draw_gizmos;
 static int score;
 
@@ -117,6 +123,16 @@ LinkListMovableObject* find_tail(LinkListMovableObject *now){
 static void init(void) {
     score = 0;
     now_status = 1;
+    if(!voice_shot)
+        voice_shot = load_audio(".\\img\\shot.ogg");
+    if(!voice_magic)
+        voice_magic = load_audio(".\\img\\magic.ogg");
+    if(!voice_bomb)
+        voice_bomb = load_audio(".\\img\\bomb.ogg");
+    if(!voice_bigbomb)
+        voice_bigbomb = load_audio(".\\img\\bigbomb.ogg");
+    if(!voice_knife)
+        voice_knife = load_audio(".\\img\\knife.ogg");
     if(!img_enemy[0])
         img_enemy[0] = load_bitmap(".\\img\\rocket-4.png");
     if(!img_enemy[1])
@@ -300,6 +316,8 @@ static void born(int type) {
         enemy->vx = 0;
         enemy->vy = 0;
         enemy->data[0] = 1;
+        enemy->data[1] = 0;
+        enemy->data[2] = rand() % 3 + 1;
         enemy->cvx = &type_4_change_v_x;
         enemy->cvy = NULL;
         enemy->type = 4;
@@ -316,7 +334,6 @@ static void born(int type) {
         }
     }
 }
-static int enemy_4_shot_last = 0;
 static bool change_state(MovableObject *now, double now_time){
     if(now_status == 2){
         for(int i = 0 ; i < skill_bullet_size ; i++){
@@ -338,8 +355,8 @@ static bool change_state(MovableObject *now, double now_time){
     now->x += now->vx;
     now->y += now->vy;
 //    printf("%lf %lf %lf %lf\n", now->x, now->y, now->vx, now->vy);
-    if(now->type == 4 && (int)now_time % 3 == 0 && (int)now_time != enemy_4_shot_last){
-        enemy_4_shot_last = now_time;
+    if(now->type == 4 && (int)now_time % (int)now->data[2] == 0 && (int)now_time - now->data[1] >= 1){
+        now->data[1] = now_time;
         int aixl_y = now->y, aixl_x = now->x;
         int bullet_size = 10;
         double l = -1, r = 1;
@@ -486,6 +503,7 @@ static void update_move(double now){
                 bullets[0][i].hidden = 0;
                 bullets[0][i].x = plane[0].x;
                 bullets[0][i].y = plane[0].y - plane[0].h / 2;
+                play_audio(voice_shot, 1);
                 break;
             }
         }
@@ -498,6 +516,7 @@ static void update_move(double now){
                 bullets[1][i].hidden = 0;
                 bullets[1][i].x = plane[1].x;
                 bullets[1][i].y = plane[1].y - plane[1].h / 2;
+                play_audio(voice_shot, 1);
                 break;
             }
         }
@@ -506,17 +525,21 @@ static void update_move(double now){
     if((key_state[ALLEGRO_KEY_RSHIFT] && now - knife_last[0] > KNIFE_COOLDOWN) && knife_hidden[0] && (plane[0].hp > 0 && !plane[0].hidden)){
         knife_hidden[0] = false;
         knife_ange[0] = 0;
+        play_audio(voice_knife, 1);
     }
     //player1 knife
     if((key_state[ALLEGRO_KEY_LSHIFT] && now - knife_last[1] > KNIFE_COOLDOWN) && knife_hidden[1] && (plane[1].hp > 0 && !plane[1].hidden)){
         knife_hidden[1] = false;
         knife_ange[1] = 0;
+        play_audio(voice_knife, 1);
     }
     //skill launch
-    if(key_state[ALLEGRO_KEY_H] && now - skill_end > skill_COOLDOWN){
+    if(key_state[ALLEGRO_KEY_H] && now - skill_end > skill_COOLDOWN && ((boss.hidden && score >= 300) || (!boss.hidden && score >= 800))){
         skill_start = now;
         skill_end = now + 10;
         now_status = 2;
+        score -= (boss.hidden?300:800);
+        magic_id = play_bgm(voice_magic, 1);
     }
 }
 static void check_state(void){
@@ -551,6 +574,8 @@ static void check_state(void){
     }
 }
 static void boss_attack(void){
+    boss.x = rand() % SCREEN_W;
+    boss.y = rand() % SCREEN_H;
     int aixl_y = boss.y, aixl_x = boss.x;
     double k = 0, v = 1 + rand() % 10;
     for(int i = 0 ; i < boss_bullets ; i++, k += 360 / boss_bullets){
@@ -610,6 +635,7 @@ static void boss_update(double now){
             if(now - boss_invincible >= 0.2){
                 boss_invincible = now;
                 boss.hp--;
+                play_audio(voice_bomb, 1);
                 boss_attack();
             }
         }
@@ -618,7 +644,8 @@ static void boss_update(double now){
         for(int q = 0 ; q < MAX_BULLET ; q++ ){
             if(bullets[i][q].hidden == false && collision(boss, bullets[i][q])){
                 bullets[i][q].hidden = true;
-                boss.hp--;
+                boss.hp -= 5;
+                play_audio(voice_bomb, 1);
                 boss_attack();
             }
         }
@@ -630,6 +657,7 @@ static void boss_update(double now){
             boss_attack();
             plane[i].x = rand() % SCREEN_W;
             plane[i].y = rand() % SCREEN_H;
+            play_audio(voice_bomb, 1);
             return;
         }
     }
@@ -642,6 +670,7 @@ static void update(void) {
         if(now > skill_end){
             now_status = 1;
             skill_prepare = 0;
+            stop_bgm(magic_id);
             for(int i = 0 ; i < skill_bullet_size ; i++)skill_bullets[i].hidden = true;
         }else if(now - last_skill_shot > 0){
             if(skill_prepare < skill_bullet_size){
@@ -828,7 +857,6 @@ static void destroy(void) {
     al_destroy_bitmap(img_enemy[0]);
     al_destroy_bitmap(img_enemy[1]);
     al_destroy_bitmap(img_enemy[2]);
-    al_destroy_sample(bgm);
     al_destroy_bitmap(img_bullet);
 //    stop_bgm(bgm_id);
     game_log("Start scene destroyed");
