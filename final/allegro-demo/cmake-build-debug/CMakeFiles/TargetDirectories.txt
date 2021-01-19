@@ -1,3 +1,0 @@
-C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/cmake-build-debug/CMakeFiles/allegro_demo.dir
-C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/Tsao Han Wen/Desktop/test/project/allegro-demo/cmake-build-debug/CMakeFiles/rebuild_cache.dir
