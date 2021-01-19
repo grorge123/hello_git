@@ -1,0 +1,292 @@
+# depslib dependency file v1.0
+1608279232 source:c:\users\tsao han wen\desktop\test\project\allegro\main.c
+	"game.h"
+
+1608279232 c:\users\tsao han wen\desktop\test\project\allegro\game.h
+	<allegro5/allegro.h>
+
+1608623619 source:c:\users\tsao han wen\desktop\test\project\allegro\game.c
+	"game.h"
+	<stdio.h>
+	<allegro5/allegro.h>
+	<allegro5/allegro_primitives.h>
+	<allegro5/allegro_image.h>
+	<allegro5/allegro_font.h>
+	<allegro5/allegro_ttf.h>
+	<allegro5/allegro_audio.h>
+	<allegro5/allegro_acodec.h>
+
+1608298524 source:c:\users\tsao han wen\desktop\test\project\allegro\scene_menu.c
+	"scene_menu.h"
+	<allegro5/allegro.h>
+	<allegro5/allegro_image.h>
+	<allegro5/allegro_font.h>
+	<allegro5/allegro_acodec.h>
+	"game.h"
+	"utility.h"
+	"shared.h"
+	"scene_start.h"
+	"scene_settings.h"
+
+1608279232 c:\users\tsao han wen\desktop\test\project\allegro\scene_menu.h
+	"game.h"
+
+1608296896 c:\users\tsao han wen\desktop\test\project\allegro\utility.h
+	<allegro5/allegro.h>
+	<allegro5/allegro_font.h>
+	<allegro5/allegro_audio.h>
+
+1608279232 c:\users\tsao han wen\desktop\test\project\allegro\shared.h
+	<allegro5/allegro_font.h>
+
+1608279232 c:\users\tsao han wen\desktop\test\project\allegro\scene_start.h
+	"game.h"
+
+1608279232 c:\users\tsao han wen\desktop\test\project\allegro\scene_settings.h
+	"game.h"
+
+1608305668 source:c:\users\tsao han wen\desktop\test\project\allegro\scene_settings.c
+	"scene_settings.h"
+	"scene_menu.h"
+
+1608531120 source:c:\users\tsao han wen\desktop\test\project\allegro\scene_start.c
+	"scene_start.h"
+	<allegro5/allegro.h>
+	<allegro5/allegro_image.h>
+	<allegro5/allegro_primitives.h>
+	"game.h"
+	"utility.h"
+	<math.h>
+	"scene_menu.h"
+	"queue.h"
+
+1608279232 source:c:\users\tsao han wen\desktop\test\project\allegro\shared.c
+	"shared.h"
+	"utility.h"
+	"game.h"
+	"scene_menu.h"
+
+1608297862 source:c:\users\tsao han wen\desktop\test\project\allegro\utility.c
+	"utility.h"
+	<allegro5/allegro.h>
+	<allegro5/allegro_image.h>
+	<allegro5/allegro_font.h>
+	<allegro5/allegro_audio.h>
+	"game.h"
+
+1608294502 c:\users\tsao han wen\desktop\test\project\allegro\queue.h
+
+1608887226 source:c:\users\tsao han wen\desktop\github\hello_git\final\allegro\game.c
+	"game.h"
+	<stdio.h>
+	<allegro5/allegro.h>
+	<allegro5/allegro_primitives.h>
+	<allegro5/allegro_image.h>
+	<allegro5/allegro_font.h>
+	<allegro5/allegro_ttf.h>
+	<allegro5/allegro_audio.h>
+	<allegro5/allegro_acodec.h>
+
+1608279232 c:\users\tsao han wen\desktop\github\hello_git\final\allegro\game.h
+	<allegro5/allegro.h>
+
+1608279232 source:c:\users\tsao han wen\desktop\github\hello_git\final\allegro\main.c
+	"game.h"
+
+1608298524 source:c:\users\tsao han wen\desktop\github\hello_git\final\allegro\scene_menu.c
+	"scene_menu.h"
+	<allegro5/allegro.h>
+	<allegro5/allegro_image.h>
+	<allegro5/allegro_font.h>
+	<allegro5/allegro_acodec.h>
+	"game.h"
+	"utility.h"
+	"shared.h"
+	"scene_start.h"
+	"scene_settings.h"
+
+1608279232 c:\users\tsao han wen\desktop\github\hello_git\final\allegro\scene_menu.h
+	"game.h"
+
+1608296896 c:\users\tsao han wen\desktop\github\hello_git\final\allegro\utility.h
+	<allegro5/allegro.h>
+	<allegro5/allegro_font.h>
+	<allegro5/allegro_audio.h>
+
+1608279232 c:\users\tsao han wen\desktop\github\hello_git\final\allegro\shared.h
+	<allegro5/allegro_font.h>
+
+1608279232 c:\users\tsao han wen\desktop\github\hello_git\final\allegro\scene_start.h
+	"game.h"
+
+1608279232 c:\users\tsao han wen\desktop\github\hello_git\final\allegro\scene_settings.h
+	"game.h"
+
+1608305668 source:c:\users\tsao han wen\desktop\github\hello_git\final\allegro\scene_settings.c
+	"scene_settings.h"
+	"scene_menu.h"
+
+1608531120 source:c:\users\tsao han wen\desktop\github\hello_git\final\allegro\scene_start.c
+	"scene_start.h"
+	<allegro5/allegro.h>
+	<allegro5/allegro_image.h>
+	<allegro5/allegro_primitives.h>
+	"game.h"
+	"utility.h"
+	<math.h>
+	"scene_menu.h"
+	"queue.h"
+
+1608294502 c:\users\tsao han wen\desktop\github\hello_git\final\allegro\queue.h
+
+1608279232 source:c:\users\tsao han wen\desktop\github\hello_git\final\allegro\shared.c
+	"shared.h"
+	"utility.h"
+	"game.h"
+	"scene_menu.h"
+
+1608297862 source:c:\users\tsao han wen\desktop\github\hello_git\final\allegro\utility.c
+	"utility.h"
+	<allegro5/allegro.h>
+	<allegro5/allegro_image.h>
+	<allegro5/allegro_font.h>
+	<allegro5/allegro_audio.h>
+	"game.h"
+
+1610849752 source:c:\users\tsao han wen\desktop\github\hello_git\final\allegroredemo\game.c
+	"game.h"
+	"utility.h"
+	"shared.h"
+	"scene_menu.h"
+	"scene_settings.h"
+	"scene_start.h"
+	"scene_gameover.h"
+	"scene_gamewin.h"
+	<stdio.h>
+	<pthread.h>
+	<unistd.h>
+	<allegro5/allegro.h>
+	<allegro5/allegro_primitives.h>
+	<allegro5/allegro_image.h>
+	<allegro5/allegro_font.h>
+	<allegro5/allegro_ttf.h>
+	<allegro5/allegro_audio.h>
+	<allegro5/allegro_acodec.h>
+
+1610849548 c:\users\tsao han wen\desktop\github\hello_git\final\allegroredemo\game.h
+	<allegro5/allegro.h>
+	<allegro5/allegro_acodec.h>
+
+1610847738 source:c:\users\tsao han wen\desktop\github\hello_git\final\allegroredemo\main.c
+	"game.h"
+
+1610849833 source:c:\users\tsao han wen\desktop\github\hello_git\final\allegroredemo\scene_menu.c
+	"scene_menu.h"
+	<allegro5/allegro.h>
+	<allegro5/allegro_image.h>
+	<allegro5/allegro_font.h>
+	<allegro5/allegro_acodec.h>
+	"game.h"
+	"utility.h"
+	"shared.h"
+	"scene_start.h"
+	"scene_settings.h"
+
+1610847738 c:\users\tsao han wen\desktop\github\hello_git\final\allegroredemo\scene_menu.h
+	"game.h"
+
+1610847738 c:\users\tsao han wen\desktop\github\hello_git\final\allegroredemo\utility.h
+	<allegro5/allegro.h>
+	<allegro5/allegro_font.h>
+	<allegro5/allegro_audio.h>
+
+1610847738 c:\users\tsao han wen\desktop\github\hello_git\final\allegroredemo\shared.h
+	<allegro5/allegro_font.h>
+
+1610847738 c:\users\tsao han wen\desktop\github\hello_git\final\allegroredemo\scene_start.h
+	"game.h"
+
+1610847738 c:\users\tsao han wen\desktop\github\hello_git\final\allegroredemo\scene_settings.h
+	"game.h"
+
+1610853760 source:c:\users\tsao han wen\desktop\github\hello_git\final\allegroredemo\scene_settings.c
+	"scene_settings.h"
+	"scene_menu.h"
+	"scene_start.h"
+	"game.h"
+	"utility.h"
+	<allegro5/allegro.h>
+	<allegro5/allegro_primitives.h>
+	<allegro5/allegro_image.h>
+	<allegro5/allegro_font.h>
+	<allegro5/allegro_acodec.h>
+
+1610853346 source:c:\users\tsao han wen\desktop\github\hello_git\final\allegroredemo\scene_start.c
+	"game.h"
+	"scene_start.h"
+	"scene_menu.h"
+	"utility.h"
+	"shared.h"
+	"move_function.h"
+	<math.h>
+	<allegro5/allegro.h>
+	<allegro5/allegro_image.h>
+	<allegro5/allegro_primitives.h>
+
+1610709872 c:\users\tsao han wen\desktop\github\hello_git\final\allegroredemo\queue.h
+
+1610849654 source:c:\users\tsao han wen\desktop\github\hello_git\final\allegroredemo\shared.c
+	"shared.h"
+	"utility.h"
+	"game.h"
+	"scene_menu.h"
+
+1610847738 source:c:\users\tsao han wen\desktop\github\hello_git\final\allegroredemo\utility.c
+	"utility.h"
+	<allegro5/allegro.h>
+	<allegro5/allegro_image.h>
+	<allegro5/allegro_font.h>
+	<allegro5/allegro_audio.h>
+	"game.h"
+
+1610849281 source:c:\users\tsao han wen\desktop\github\hello_git\final\allegroredemo\scene_gameover.c
+	"scene_gameover.h"
+	"scene_menu.h"
+	"game.h"
+	"utility.h"
+	"shared.h"
+	"scene_start.h"
+	"scene_settings.h"
+	<allegro5/allegro.h>
+	<allegro5/allegro_image.h>
+	<allegro5/allegro_font.h>
+	<allegro5/allegro_acodec.h>
+	<allegro5/allegro_primitives.h>
+
+1610847738 c:\users\tsao han wen\desktop\github\hello_git\final\allegroredemo\scene_gameover.h
+	"game.h"
+
+1610849284 source:c:\users\tsao han wen\desktop\github\hello_git\final\allegroredemo\scene_gamewin.c
+	"scene_gamewin.h"
+	"scene_menu.h"
+	<allegro5/allegro.h>
+	<allegro5/allegro_image.h>
+	<allegro5/allegro_font.h>
+	<allegro5/allegro_acodec.h>
+	"game.h"
+	"utility.h"
+	"shared.h"
+	"scene_start.h"
+	"scene_settings.h"
+
+1610847738 c:\users\tsao han wen\desktop\github\hello_git\final\allegroredemo\scene_gamewin.h
+	"game.h"
+
+1610847738 source:c:\users\tsao han wen\desktop\github\hello_git\final\allegroredemo\move_function.c
+	"move_function.h"
+	<math.h>
+
+1610847738 c:\users\tsao han wen\desktop\github\hello_git\final\allegroredemo\move_function.h
+	"scene_start.h"
+	"game.h"
+

@@ -1,0 +1,112 @@
+There are total 5 supported mouse buttons
+Allegro5 initialized
+Game begin
+loaded font: .\img\pirulen.ttf with size 32
+loaded font: .\img\pirulen.ttf with size 24
+loaded audio: .\img\S31-Night Prowler.ogg
+loaded audio: .\img\start.ogg
+Menu scene start create
+loaded font: .\img\pirulen.ttf with size 32
+Settings scene created
+Start scene created
+Gamewin scene start creat
+Game over scene start creat
+loaded font: .\img\pirulen.ttf with size 24
+loaded image: .\img\gamewin-bg.jpg
+loaded image: .\img\main-bg.jpg
+loaded image: .\img\gameover-bg.png
+resized image: .\img\gamewin-bg.jpg
+gamewin scene initialized
+Gamewin scene created
+resized image: .\img\main-bg.jpg
+resized image: .\img\gameover-bg.png
+gameover scene initialized
+Game over scene created
+loaded audio: .\img\S31-Night Prowler.ogg
+loaded audio: .\img\boss.ogg
+Menu scene initialized
+Menu scene created
+loaded audio: .\img\start.ogg
+played audio (bgm)
+Change scene from (unnamed) to Menu
+Game initialized
+Game start event loop
+Mouse button 1 down at (573, 362)
+Mouse button 1 up at (573, 362)
+Mouse button 1 down at (573, 362)
+Mouse button 1 up at (573, 362)
+Mouse button 1 down at (573, 362)
+Key with keycode 67 down
+stop audio (bgm)
+played audio (bgm)
+Change scene from Menu to Start
+active scene init
+loaded audio: .\img\shot.ogg
+loaded audio: .\img\magic.ogg
+loaded audio: .\img\bomb.ogg
+loaded audio: .\img\bigbomb.ogg
+loaded audio: .\img\knife.ogg
+loaded image: .\img\rocket-4.png
+loaded image: .\img\rocket-3.png
+loaded image: .\img\rocket-1.png
+loaded image: .\img\boss_bullet.png
+loaded image: .\img\image12.png
+loaded image: .\img\knif.png
+loaded image: .\img\rocket-1.png
+loaded image: .\img\skill_bullet.png
+loaded image: .\img\rocket-2.png
+loaded image: .\img\star-bg.jpg
+resized image: .\img\star-bg.jpg
+loaded image: .\img\start-bg.jpg
+resized image: .\img\start-bg.jpg
+loaded image: .\img\plane.png
+loaded image: .\img\plane.png
+Start scene initialized
+Key with keycode 67 up
+Mouse button 1 up at (573, 362)
+Key with keycode 83 down
+Key with keycode 85 down
+Key with keycode 85 up
+Key with keycode 83 up
+Key with keycode 84 down
+Key with keycode 84 up
+Key with keycode 82 down
+Key with keycode 85 down
+Key with keycode 82 up
+Key with keycode 83 down
+Key with keycode 85 up
+Key with keycode 84 down
+Key with keycode 84 up
+Key with keycode 83 up
+Key with keycode 85 down
+Key with keycode 85 up
+Key with keycode 84 down
+Key with keycode 83 down
+Key with keycode 84 up
+Key with keycode 83 up
+Key with keycode 67 down
+Key with keycode 67 up
+Key with keycode 84 down
+Key with keycode 84 up
+Key with keycode 83 down
+Key with keycode 83 up
+Key with keycode 12 down
+Key with keycode 12 up
+Key with keycode 11 down
+played audio (once)
+played audio (once)
+played audio (once)
+played audio (once)
+played audio (once)
+played audio (once)
+played audio (once)
+Key with keycode 11 up
+Key with keycode 63 down
+stop audio (bgm)
+Key with keycode 63 up
+Mouse button 1 down at (563, 488)
+Mouse button 1 up at (563, 488)
+Window close button clicked
+Game end
+stop audio (bgm)
+Start scene destroyed
